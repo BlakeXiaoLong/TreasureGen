@@ -3675,24 +3675,108 @@ std::string wGen(int subtype)
 			else std::cout << "Error Code 3675\n";
 			break;
 		case 3:
+			if (rollA < 7) ss << "Headband of Havoc";
+			else if (rollA < 13) ss << "Serpent's Band";
+			else if (rollA < 21) ss << "Headband of Mental Prowess +2";
+			else if (rollA < 27) ss << "Hunter's Band";
+			else if (rollA < 35) ss << "Phylactery of Negative Channeling";
+			else if (rollA < 43) ss << "Phylactery of Positive Channeling";
+			else if (rollA < 49) ss << "Veiled Eye";
+			else if (rollA < 55) ss << "Band of the Stalwart Warrior";
+			else if (rollA < 61) ss << "Headband of Ninjitsu";
+			else if (rollA < 69) ss << "Headband of Alluring Charisma +4";
+			else if (rollA < 77) ss << "Headband of Inspired Wisdom +4";
+			else if (rollA < 86) ss << "Headband of Mental Superiority +2";
+			else if (rollA < 94) ss << "Headband of Vast Intelligence";
+			else if (rollA < 101) ss << "Shifter's Headband +4";
+			else std::cout << "Error Code 3692\n";
 			break;
 		case 4:
+			if (rollA < 31) ss << "Headband of Arcane Energy";
+			else if (rollA < 71) ss << "Headband of Counterspelling";
+			else if (rollA < 101) ss << "Headband of Knucklebones";
+			else std::cout << "Error Code 3698\n";
 			break;
 		case 5:
+			if (rollA < 10) ss << "Soulbound Eye";
+			else if (rollA < 20) ss << "Winter Wolf Headband";
+			else if (rollA < 33) ss << "Headband of Alluring Charisma +6";
+			else if (rollA < 46) ss << "Headband of Inspired Wisdom +6";
+			else if (rollA < 59) ss << "Headband of Vast Intelligence +6";
+			else if (rollA < 57) ss << "Shifter's Headband +6";
+			else if (rollA < 82) ss << "Headband of Mental Prowess +4";
+			else if (rollA < 91) ss << "Headband of Seduction";
+			else if (rollA < 101) ss << "Headband of Aerial Agility +4";
+			else std::cout << "Error Code 3710\n";
 			break;
 		case 6:
+			if (rollA < 21) ss << "Headband of Mental Resiliance";
+			else if (rollA < 51) ss << "Headband of Mental Superiority +4";
+			else if (rollA < 66) ss << "Headband of Aerial Agility +6";
+			else if (rollA < 86) ss << "Headband of Mental Prowess +6";
+			else if (rollA < 101) ss << "Headband of Mental Superiority +6";
+			else std::cout << "Error Code 3718\n";
 			break;
 		default:
+			std::cout << "Error Code 3721\n";
 			break;
 		}
 	else if (rollG<55) // Neck
 		switch (subtype)
 		{
 		case 1:
+			if (rollA < 11) ss << "Hand of the Mage";
+			else if (rollA < 19) ss << "Aegis of Recovery";
+			else if (rollA < 26) ss << "Amulet of Bullet Protection +1";
+			else if (rollA < 38) ss << "Brooch of Shielding";
+			else if (rollA < 50) ss << "Necklace of Fireballs (type I)";
+			else if (rollA < 64) ss << "Amulet of Natural Armor +1";
+			else if (rollA < 73) ss << "Golembane Scarab";
+			else if (rollA < 83) ss << "Necklace of Fireballs (type II)";
+			else if (rollA < 90) ss << "Swarmbane Clasp";
+			else if (rollA < 96) ss << "Mind Sentinal's Medallion";
+			else if (rollA < 101) ss << "Mummer's Ruff";
+			else std::cout << "Error Code 3739\n";
 			break;
 		case 2:
+			if (rollA < 9) ss << "Amulet of Elemental Strife";
+			else if (rollA < 16) ss << "Righteous Fist Amulet";
+			else if (rollA < 27) ss << "Amulet of Mighty Fists +1";
+			else if (rollA < 37) ss << "Necklace of Fireballs (type III)";
+			else if (rollA < 48) ss << "Necklace of Fireballs (type IV)";
+			else if (rollA < 56) ss << "Stormlure";
+			else if (rollA < 67) ss << "Necklace of Fireballs (type V)";
+			else if (rollA < 74) ss << "Amulet of Bullet Protection +2";
+			else if (rollA < 82) ss << "Feychild Necklace";
+			else if (rollA < 90) ss << "Carcanet of Destruction";
+			else if (rollA < 101) ss << "Periapt of Health";
+			else std::cout << "Error Code 3753\n";
 			break;
 		case 3:
+			if (rollA < 9) ss << "Amulet of Natural Armor +2";
+			else if (rollA < 13) ss << "Amulet of Proof Against Petrification";
+			else if (rollA < 16) ss << "Everwake Amulet";
+			else if (rollA < 19) ss << "Gravewatch Pendant";
+			else if (rollA < 24) ss << "Hand of Glory";
+			else if (rollA < 27) ss << "Torc of Lionheart Fury";
+			else if (rollA < 34) ss << "Necklace of Fireballs (type VI)";
+			else if (rollA < 41) ss << "Necklace of Fireballs (type VII)";
+			else if (rollA < 44) ss << "Amulet of Hidden Strength";
+			else if (rollA < 48) ss << "Necklace of Adaptation";
+			else if (rollA < 52) ss << "Amulet of Spell Cunning";
+			else if (rollA < 55) ss << "Collar of the True Companion";
+			else if (rollA < 59) ss << "Frost Fist Amulet";
+			else if (rollA < 64) ss << "Crystal of Healing Hands";
+			else if (rollA < 97) ss << "Guardian Gorget";
+			else if (rollA < 74) ss << "Medallion of Thoughts";
+			else if (rollA < 78) ss << "Periapt of Protection from Curses";
+			else if (rollA < 82) ss << "Forge Fist Amulet";
+			else if (rollA < 86) ss << "Amulet of Bullet Protection +3";
+			else if (rollA < 93) ss << "Periapt of Wound Closure";
+			else if (rollA < 96) ss << "Amulet of Mighty Fists +2";
+			else if (rollA < 99) ss << "Necklace of Ki Serenity";
+			else if (rollA < 101) ss << "Brooch of Amber Sparks";
+			else std::cout << "Error Code 3779\n";
 			break;
 		case 4:
 			break;
