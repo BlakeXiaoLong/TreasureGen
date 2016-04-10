@@ -3344,98 +3344,335 @@ std::string wGen(int subtype)
 		switch (subtype)
 		{
 		case 1:
+			if (rollA < 16) ss << "Bandages of Rapid Recovery";
+			else if (rollA < 31) ss << "Quick Runner's Shirt";
+			else if (rollA < 51) ss << "Endless Bandolier";
+			else if (rollA < 76) ss << "All Tools Vest";
+			else if (rollA < 101) ss << "Vest of Surgery";
+			else std::cout << "Error Code 3552\n";
 			break;
 		case 2:
+			if (rollA < 11) ss << "Sash of the War Champion";
+			else if (rollA < 21) ss << "Slipping Jacket";
+			else if (rollA < 32) ss << "Tunic of Careful Casting";
+			else if (rollA < 43) ss << "Vest of Escape";
+			else if (rollA < 53) ss << "Cackling Hag's Blouse";
+			else if (rollA < 63) ss << "Deadshot Vest";
+			else if (rollA < 71) ss << "Prophet's Pectoral";
+			else if (rollA < 80) ss << "Tunic of Deadly Might";
+			else if (rollA < 91) ss << "Vest of the Vengeful Tracker";
+			else if (rollA < 101) ss << "Resplendent Uniform";
+			else std::cout << "Error Code 3365\n";
 			break;
 		case 3:
+			if (rollA < 14) ss << "Shirt of Immolation";
+			else if (rollA < 29) ss << "Snakeskin Tunic";
+			else if (rollA < 41) ss << "Bane Baldric";
+			else if (rollA < 61) ss << "Unfettered Shirt";
+			else if (rollA < 81) ss << "Lesser Prisoner's Jacket";
+			else if (rollA < 101) ss << "Vest of the Cockroach";
+			else std::cout << "Error Code 3374\n";
 			break;
 		case 4:
+			if (rollA < 51) ss << "Vest of Stable Mutagen";
+			else if (rollA < 101) ss << "Spectral Shroud";
+			else std::cout << "Error Code 3379";
 			break;
 		case 5:
+			if (rollA < 61) ss << "Mantle of Immortality";
+			else if (rollA < 101) ss << "Greater Prisoner's Jacket";
+			else std::cout << "Error Code 3384\n";
 			break;
 		case 6:
+			if (rollA < 36) ss << "Merciful Baldric";
+			else if (rollA < 71) ss << "Mantle of Faith";
+			else if (rollA < 101) ss << "Mantle of Spell Resistance";
+			else std::cout << "Error Code 3390\n";
 			break;
 		default:
+			std::cout << "Error Code 3393\n";
 			break;
 		}
 	else if (rollG<23) // Eyes
 		switch (subtype)
 		{
 		case 1:
+			if (rollA < 19) ss << "Deathwatch Eyes";
+			else if (rollA < 39) ss << "Eyes of the Eagle";
+			else if (rollA < 59) ss << "Goggles of Minute Seeing";
+			else if (rollA < 73) ss << "Pirate's Eye Patch";
+			else if (rollA < 88) ss << "Spectacles of Understanding";
+			else if (rollA < 101) ss << "Lenses of Detection";
+			else std::cout << "Error Code 3406\n";
 			break;
 		case 2:
+			if (rollA < 21) ss << "Eyes of the Owl";
+			else if (rollA < 45) ss << "Eyes of Keen Sight";
+			else if (rollA < 67) ss << "Treasure Hunter's Goggles";
+			else if (rollA < 85) ss << "Inquisitor's Monacle";
+			else if (rollA < 101) ss << "Kinsight Goggles";
+			else std::cout << "Error Code 3414\n";
 			break;
 		case 3:
+			if (rollA < 17) ss << "Goggles of Elvenkind";
+			else if (rollA < 32) ss << "Goggles of Brilliant Light";
+			else if (rollA < 49) ss << "Blind Man's Fold";
+			else if (rollA < 68) ss << "Goggles of Night";
+			else if (rollA < 83) ss << "Lenses of Figment Piercing";
+			else if (rollA < 101) ss << "Arachnid Goggles";
+			else std::cout << "Error Code 3423\n";
 			break;
 		case 4:
+			if (rollA < 22) ss << "Darksight Goggles";
+			else if (rollA < 41) ss << "Sniper Goggles";
+			else if (rollA < 59) ss << "Rainbow Lenses";
+			else if (rollA < 78) ss << "Annihilation Spectacles";
+			else if (rollA < 101) ss << "Eyes of Doom";
+			else std::cout << "Error Code 3431\n";
 			break;
 		case 5:
+			if (rollA < 61) ss << "Eyes of Eyebite";
+			else if (rollA < 101) ss << "Greater Sniper Goggles";
+			else std::cout << "Error Code 3436\n";
 			break;
 		case 6:
+			if (rollA < 19) ss << "Eyes of Charming";
+			else if (rollA < 35) ss << "Monacle of the Investigatior";
+			else if (rollA < 49) ss << "Sea Tyrant's Patch";
+			else if (rollA < 64) ss << "Swordmaster's Blindfold";
+			else if (rollA < 78) ss << "Mindmaster's Eyes";
+			else if (rollA < 91) ss << "Eyes of the Dragon";
+			else if (rollA < 101) ss << "Truesight Goggles";
+			else std::cout << "Error Code 3446\n";
 			break;
 		default:
+			std::cout << "Error Code 3449\n";
 			break;
 		}
 	else if (rollG<29) // Feet
 		switch (subtype)
 		{
 		case 1:
+			if (rollA < 12) ss << "Boots of the Cat";
+			else if (rollA < 23) ss << "Daredevil Boots";
+			else if (rollA < 32) ss << "Boots of the Enduring March";
+			else if (rollA < 42) ss << "Feather Step Slippers";
+			else if (rollA < 51) ss << "Boots of Friendly Terrain";
+			else if (rollA < 61) ss << "Boots of the Winterlands"; 
+			else if (rollA < 77) ss << "Boots of Elvenkind";
+			else if (rollA < 86) ss << "Acrobat Slippers";
+			else if (rollA < 93) ss << "Horseshoes of Speed";
+			else if (rollA < 101) ss << "Boots of the Mire";
+			else std::cout << "Error Code 3466\n";
 			break;
 		case 2:
+			if (rollA < 8) ss << "Burgular Boots (minor)";
+			else if (rollA < 14) ss << "Horseshoes of Crushing Blows";
+			else if (rollA < 20) ss << "Sandals of Quick Reaction";
+			else if (rollA < 27) ss << "Slippers of Cloudwalking";
+			else if (rollA < 41) ss << "Slippers of Spider Climbing";
+			else if (rollA < 47) ss << "Sandals of the Lightest Step";
+			else if (rollA < 61) ss << "Boots of Striding and Springing";
+			else if (rollA < 69) ss << "Horseshoes of a Zephyr";
+			else if (rollA < 76) ss << "Haunted Shoes";
+			else if (rollA < 83) ss << "Jaunt Boots";
+			else if (rollA < 101) ss << "Boots of Levitation";
+			else std::cout << "Error Code 3480\n";
 			break;
 		case 3:
+			if (rollA < 9) ss << "Boots of Escape";
+			else if (rollA < 15) ss << "Earth Root Boots";
+			else if (rollA < 22) ss << "Nightmare Boots";
+			else if (rollA < 27) ss << "Nightmare Horseshoes";
+			else if (rollA < 33) ss << "Caltrop Boots";
+			else if (rollA < 40) ss << "Tremor Boots";
+			else if (rollA < 48) ss << "Boots of the Mastedon";
+			else if (rollA < 55) ss << "Shoes of the Lightning Leaper";
+			else if (rollA < 71) ss << "Boots of Speed";
+			else if (rollA < 78) ss << "Verdant Boots";
+			else if (rollA < 85) ss << "Horseshoes of Crushing Blows";
+			else if (rollA < 101) ss << "Winged Boots";
+			else std::cout << "Error Code 3495\n";
 			break;
 		case 4:
+			if (rollA < 39) ss << "Shoes of the Firewalker";
+			else if (rollA < 73) ss << "Dryad Sandals";
+			else if (rollA < 101) ss << "Horseshoes of the Mist";
+			else std::cout << "Error Code 3507\n";
 			break;
 		case 5:
+			if (rollA < 21) ss << "Getaway Boots";
+			else if (rollA < 36) ss << "Horseshoes of Crushing Blows +3";
+			else if (rollA < 56) ss << "Horseshoes of Glory";
+			else if (rollA < 76) ss << "Burgular Boots (major)";
+			else if (rollA < 101) ss << "Boots of Teleportation";
+			else std::cout << "Error Code 3509\n";
 			break;
 		case 6:
+			if (rollA < 41) ss << "Slippers of the Triton";
+			else if (rollA < 71) ss << "Horseshoes of Crushing Blows +4";
+			else if (rollA < 101) ss << "Horseshoes of Crushing Blows +5";
+			else std::cout << "Error Code 3515";
 			break;
 		default:
+			std::cout << "Error Code 3518\n";
 			break;
 		}
 	else if (rollG<25) // Hands
 		switch (subtype)
 		{
 		case 1:
+			if (rollA < 14) ss << "Assisting Gloves";
+			else if (rollA < 23) ss << "Claws of the Ice Bear";
+			else if (rollA < 35) ss << "Gloves of Reconnaissance";
+			else if (rollA < 47) ss << "Growing Glove";
+			else if (rollA < 59) ss << "Apprentice's Cheating Glove";
+			else if (rollA < 71) ss << "Challenger's Gloves";
+			else if (rollA < 81) ss << "Gloves of Larceny";
+			else if (rollA < 91) ss << "Healer's Gloves";
+			else if (rollA < 101) ss << "Engineer's Workgloves";
+			else std::cout << "Error Code 3534\n";
 			break;
 		case 2:
+			if (rollA < 13) ss << "Gauntlets of the Skilled Maneuver";
+			else if (rollA < 22) ss << "Ghostvision Gloves";
+			else if (rollA < 34) ss << "Gloves of Arrow Snaring";
+			else if (rollA < 44) ss << "Trapspringer's Gloves";
+			else if (rollA < 56) ss << "Gloves of Arcane Striking";
+			else if (rollA < 66) ss << "Prisoner's Gloves";
+			else if (rollA < 76) ss << "Magnetist's Gloves";
+			else if (rollA < 101) ss << "Gloves of Swimming and Climbing";
+			else std::cout << "Error Code 3545\n";
 			break;
 		case 3:
+			if (rollA < 3) ss << "Deliquescent Gloves";
+			else if (rollA < 6) ss << "Form-Fixing Gauntlets";
+			else if (rollA < 9) ss << "Iron Cobra Gauntlet";
+			else if (rollA < 17) ss << "Shadow Falconer's Glove";
+			else if (rollA < 21) ss << "Spellstrike Gloves";
+			else if (rollA < 29) ss << "Glyphbane Gloves";
+			else if (rollA < 41) ss << "Glove of Storing";
+			else if (rollA < 47) ss << "Gloves of Shaping";
+			else if (rollA < 55) ss << "Pliant Gloves";
+			else if (rollA < 77) ss << "Gauntlets of Rust";
+			else if (rollA < 101) ss << "Gloves of Dueling";
+			else std::cout << "Error Code 3559\n";
 			break;
 		case 4:
+			if (rollA < 31) ss << "Vampiric Gloves";
+			else if (rollA < 66) ss << "Giant Fist Gauntlets";
+			else if (rollA < 101) ss << "Gloves of the Shortened Path";
+			else std::cout << "Error Code 3565\n";
 			break;
 		case 5:
+			if (rollA < 41) ss << "Gloves of the Commanding Conjurer";
+			else if (rollA < 101) ss << "Gauntlet of Rust (greater)";
+			else std::cout << "Error Code 3570\n";
 			break;
 		case 6:
+			if (rollA < 61) ss << "Talons of Leng";
+			else if (rollA < 101) ss << "Gauntlets of the Weaponmaster";
+			else std::cout << "Error Code 3575\n";
 			break;
 		default:
+			std::cout << "Error Code 3578\n";
 			break;
 		}
 	else if (rollG<42) // Head
 		switch (subtype)
 		{
 		case 1:
+			if (rollA < 11) ss << "Mask of Stony Demeanor";
+			else if (rollA < 23) ss << "Cap of Human Guise";
+			else if (rollA < 37) ss << "Cap of Light";
+			else if (rollA < 57) ss << "Hat of Disguise";
+			else if (rollA < 72) ss << "Buffering Cap";
+			else if (rollA < 86) ss << "Miser's Mask";
+			else if (rollA < 101) ss << "Stalker's Mask";
+			else std::cout << "Error Code 3592\n";
 			break;
 		case 2:
+			if (rollA < 13) ss << "Circlet of Persuasion";
+			else if (rollA < 22) ss << "Grappler's Mask";
+			else if (rollA < 32) ss << "Helm of Fearson Mein";
+			else if (rollA < 41) ss << "Jingasa of the Fortunate Soldier";
+			else if (rollA < 55) ss << "Helm of Comprehend Languages and Read Magic";
+			else if (rollA < 68) ss << "Crown of Swords";
+			else if (rollA < 88) ss << "Crown of Blasting (minor)";
+			else if (rollA < 101) ss << "Mask of the Krenshar";
+			else std::cout << "Error Code 3603";
 			break;
 		case 3:
+			if (rollA < 17) ss << "Helm of the Mammoth Lord";
+			else if (rollA < 31) ss << "Veil of Fleeting Glances";
+			else if (rollA < 47) ss << "Mask of a Thousand Tomes";
+			else if (rollA < 64) ss << "Medusa Mask";
+			else if (rollA < 81) ss << "Cap of the Free Thinker";
+			else if (rollA < 101) ss << "Halo of Inner Calm";
+			else std::cout << "Error Code 3612\n";
 			break;
 		case 4:
+			if (rollA < 7) ss << "Cat's Eye Crown";
+			else if (rollA < 13) ss << "Maw of the Wyrm";
+			else if (rollA < 20) ss << "Mitre of the Hierophant";
+			else if (rollA < 28) ss << "Magician's Hat";
+			else if (rollA < 35) ss << "Circlet of Mindsight";
+			else if (rollA < 43) ss << "Mask of the Skull";
+			else if (rollA < 51) ss << "Howling Helm";
+			else if (rollA < 63) ss << "Crown of Blasting (major)";
+			else if (rollA < 73) ss << "Helm of Underwater Action";
+			else if (rollA < 80) ss << "Crown of Conquest";
+			else if (rollA < 86) ss << "Batrachian Helm";
+			else if (rollA < 95) ss << "Helm of Telepathy";
+			else if (rollA < 101) ss << "Plague Mask";
+			else std::cout << "Error Code 3628\n";
 			break;
 		case 5:
+			if (rollA < 15) ss << "Iron Circlet of Guarded Souls";
+			else if (rollA < 30) ss << "Laurel of Command";
+			else if (rollA < 46) ss << "Mask of Giants (lesser)";
+			else if (rollA < 62) ss << "Steel-Minded Cap";
+			else if (rollA < 79) ss << "Stormlord's Helm";
+			else if (rollA < 101) ss << "Helm of Brilliance (lesser)";
+			else std::cout << "Error Code 3637\n";
 			break;
 		case 6:
+			if (rollA < 15) ss << "Judge's Wig";
+			else if (rollA < 40) ss << "Helm of Teleportation";
+			else if (rollA < 56) ss << "Halo of Menace";
+			else if (rollA < 69) ss << "Mask of Giants (greater)";
+			else if (rollA < 84) ss << "Helm of Brilliance";
+			else if (rollA < 93) ss << "Helm of Electric Radiance";
+			else if (rollA < 101) ss << "Crown of Heaven";
+			else std::cout << "Error Code 3647\n";
 			break;
 		default:
+			std::cout << "Error Code 3650";
 			break;
 		}
 	else if (rollG<48) // Headband
 		switch (subtype)
 		{
 		case 1:
+			if (rollA < 61) ss << "Phylactery of Faithfulness";
+			else if (rollA < 101) ss << "Dead Man's Headband";
+			else std::cout << "Error Code 3569\n";
 			break;
 		case 2:
+			if (rollA < 10) ss << "Headband of Alluring Charisma +2";
+			else if (rollA < 19) ss << "Headband of Inspired Wisdom +2";
+			else if (rollA < 28) ss << "Headband of Vast Intelligence +2";
+			else if (rollA < 34) ss << "Headband of Aerial Agility +2";
+			else if (rollA < 40) ss << "Shifter's Headband +2";
+			else if (rollA < 46) ss << "Headband of Ponderous Recollection";
+			else if (rollA < 52) ss << "Headband of Ki Focus";
+			else if (rollA < 59) ss << "Headband of Unshakable Resolve";
+			else if (rollA < 67) ss << "Hollywreath Band";
+			else if (rollA < 75) ss << "Headband of Deathless Devotion";
+			else if (rollA < 83) ss << "Phylactery of the Shepherd";
+			else if (rollA < 92) ss << "Headband of Intuition";
+			else if (rollA < 101) ss << "Headband of Fortune's Favor";
+			else std::cout << "Error Code 3675\n";
 			break;
 		case 3:
 			break;
