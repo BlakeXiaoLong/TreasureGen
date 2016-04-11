@@ -3779,30 +3779,115 @@ std::string wGen(int subtype)
 			else std::cout << "Error Code 3779\n";
 			break;
 		case 4:
+			if (rollA < 16) ss << "Symbol of Sanguine Protection";
+			else if (rollA < 25) ss << "Amulet of Natural Armor +3";
+			else if (rollA < 36) ss << "Ampuole of False Blood";
+			else if (rollA < 51) ss << "Amulet of Magecraft";
+			else if (rollA < 63) ss << "Dragonfor Amulet";
+			else if (rollA < 68) ss << "Amulet of Spell Mastery";
+			else if (rollA < 73) ss << "Amulet of Bullet Protection +4";
+			else if (rollA < 86) ss << "Hand of Stone";
+			else if (rollA < 101) ss << "Periapt of Proof Against Poison";
+			else std::cout << "Error Code 3791\n";
 			break;
 		case 5:
+			if (rollA < 19) ss << "Amulet of Natural Armor";
+			else if (rollA < 36) ss << "Amulet of Proof Against Detection and Location";
+			else if (rollA < 50) ss << "Amulet of Mighty Fists +3";
+			else if (rollA < 68) ss << "Amulet of Bullet Protection +5";
+			else if (rollA < 83) ss << "Scarab of Protection";
+			else if (rollA < 101) ss << "Necklace of Netted Stars";
+			else std::cout << "Error Code 3800\n";
 			break;
 		case 6:
+			if (rollA < 36) ss << "Amulet of Natural Armor +5";
+			else if (rollA < 61) ss << "Amulet of Mighty Fists +4";
+			else if (rollA < 86) ss << "Amulet of Mighty Fists +5";
+			else if (rollA < 101) ss << "Amulet of the Planes";
+			else std::cout << "Error Code 3807\n";
 			break;
 		default:
+			std::cout << "Error Code 3810\n";
 			break;
 		}
 	else if (rollG<62) // Shoulders
 		switch (subtype)
 		{
 		case 1:
+			if (rollA < 7) ss << "Catching Cape";
+			else if (rollA < 11) ss << "Cloak of Human Guise";
+			else if (rollA < 31) ss << "Cloak of Resistance +1";
+			else if (rollA < 37) ss << "Muleback Cords";
+			else if (rollA < 39) ss << "Shawl of Life-Kepping";
+			else if (rollA < 45) ss << "Shield Cloak";
+			else if (rollA < 51) ss << "Quickchange Cloak";
+			else if (rollA < 57) ss << "Cowardly Crouching Cloak";
+			else if (rollA < 75) ss << "Cloak of Elvenkind";
+			else if (rollA < 81) ss << "Cloak of the Hedge Wizard";
+			else if (rollA < 86) ss << "Cloak of Firey Vanishing";
+			else if (rollA < 95) ss << "Cloak of Fangs";
+			else if (rollA < 98) ss << "Pauldrons of the Serpent";
+			else if (rollA < 101) ss << "Stonemist Cloak";
+			else std::cout << "Error Code 3831\n";
 			break;
 		case 2:
+			if (rollA < 27) ss << "Cloak of Resistance +2";
+			else if (rollA < 39) ss << "Cloak of the Scuttling Rat";
+			else if (rollA < 40) ss << "Seafoam Shawl";
+			else if (rollA < 53) ss << "Treeform Cloak";
+			else if (rollA < 75) ss << "Eagle Cape";
+			else if (rollA < 95) ss << "Cloak of the Manta Ray";
+			else if (rollA < 101) ss << "Hunter's Cloak";
+			else std::cout << "Error Code 3841\n";
 			break;
 		case 3:
+			if (rollA < 21) ss << "Cloak of Resistance +3";
+			else if (rollA < 23) ss << "Cloak of the Dustwalker";
+			else if (rollA < 26) ss << "Cocoon Cloak";
+			else if (rollA < 28) ss << "Pauldrons of the Bull";
+			else if (rollA < 33) ss << "Stone Cloak (minor)";
+			else if (rollA < 41) ss << "Cape of the Mountebank";
+			else if (rollA < 46) ss << "Pauldrons of the Watchful Lion";
+			else if (rollA < 53) ss << "Lion Cloak";
+			else if (rollA < 55) ss << "Mantle of Spores";
+			else if (rollA < 60) ss << "Cape of Effulgent Escape";
+			else if (rollA < 70) ss << "Cloak of Arachnida";
+			else if (rollA < 73) ss << "Gunfighter's Poncho";
+			else if (rollA < 75) ss << "Tentacle Cloak";
+			else if (rollA < 77) ss << "Demonspike Pauldrons";
+			else if (rollA < 79) ss << "Comfort's Cloak";
+			else if (rollA < 89) ss << "Cloak of Resistance +4";
+			else if (rollA < 92) ss << "Shawl of the Crone";
+			else if (rollA < 101) ss << "Prestidigitator's Cloak";
+			else std::cout << "Error Code 3862\n";
 			break;
 		case 4:
+			if (rollA < 13) ss << "Stole of Justice";
+			else if (rollA < 25) ss << "Jellyfish Cape";
+			else if (rollA < 33) ss << "Cloak of the Diplomat";
+			else if (rollA < 45) ss << "Slashing Cloak";
+			else if (rollA < 57) ss << "Stone Cloak (major)";
+			else if (rollA < 69) ss << "Cloak of Displacement (minor)";
+			else if (rollA < 89) ss << "Cloak of Resistance +5";
+			else if (rollA < 101) ss << "Cloak of the Bat";
+			else std::cout << "Error Code 3873\n";
 			break;
 		case 5:
+			if (rollA < 41) ss << "Highwayaman's Cape";
+			else if (rollA < 61) ss << "Juggernaut's Pauldrons";
+			else if (rollA < 101) ss << "Charlatan's Cape";
+			else std::cout << "Error Code 3879\n";
 			break;
 		case 6:
+			if (rollA < 16) ss << "Cloak of Displacement (major)";
+			else if (rollA < 36) ss << "Wings of Flying";
+			else if (rollA < 56) ss << "Cloak of Etherealness";
+			else if (rollA < 81) ss << "Wings of the Gargoyle";
+			else if (rollA < 101) ss << "Wyvern Cloak";
+			else std::cout << "Error Code 3887\n";
 			break;
 		default:
+			std::cout << "Error Code 3890\n";
 			break;
 		}
 	else if (rollG<68) // Wrists
