@@ -4,6 +4,7 @@
 #include <string>
 #include <sstream>
 #include <time.h>
+#include <fstream>
 
 int roll(int numOfRolls, int dice)
 {
@@ -4540,21 +4541,25 @@ std::string mGen(int multiple, int subtype)
 	return ss.str();
 }
 
-void genFirst(int type, double value)
+int genFirst(int type, double value)
 {
 	std::stringstream ss;
-	std::vector<int> typeA = { 1,5,10,25,50,100,200,500,1000,5000,10000,50000 }; // 12
-	std::vector<int> typeB = { 10,15,25,50,75,100,150,200,250,500,750,1000,2500,5000,10000,20000,50000 }; // 17
-	std::vector<int> typeC = { 50,100,150,200,250,500,750,1000,1500,2000,2500,5000,7500,10000,15000,20000,50000 }; // 17
-	std::vector<int> typeD = { 50,100,150,200,250,300,400,500,750,1000,1500,2000,3000,4000,5000,7500,10000,15000,20000,25000,30000,50000 }; // 22
-	std::vector<int> typeE = { 200,300,350,1000,1500,2500,3000,4000,5500,6000,7500,8000,9000,10000,13000,15000,20000,25000,30000,35000,40000,50000,75000,100000 }; // 24
-	std::vector<int> typeF = { 50,250,350,400,500,750,1000,1500,2000,3000,4000,5000,6000,7500,10000,12500,15000,20000,25000,30000,40000,50000,60000,75000,100000 }; // 25
-	std::vector<int> typeG = { 50,75,100,150,200,250,500,750,1000,1500,2000,2500,3000,4000,5000,6000,7500,10000,12500,15000,20000,25000,30000,40000,50000,60000,75000,100000 }; // 28
-	std::vector<int> typeH = { 500,1000,2500,5000,7500,10000,15000,20000,25000,30000,40000,50000,75000,100000 }; // 14
+	std::vector<int> types[] = {
+		{ 1,5,10,25,50,100,200,500,1000,5000,10000,50000 }, // 12
+		{ 10,15,25,50,75,100,150,200,250,500,750,1000,2500,5000,10000,20000,50000 }, // 17
+		{ 50,100,150,200,250,500,750,1000,1500,2000,2500,5000,7500,10000,15000,20000,50000 }, // 17
+		{ 50,100,150,200,250,300,400,500,750,1000,1500,2000,3000,4000,5000,7500,10000,15000,20000,25000,30000,50000 }, // 22
+		{ 200,300,350,1000,1500,2500,3000,4000,5500,6000,7500,8000,9000,10000,13000,15000,20000,25000,30000,35000,40000,50000,75000,100000 }, // 24
+		{ 50,250,350,400,500,750,1000,1500,2000,3000,4000,5000,6000,7500,10000,12500,15000,20000,25000,30000,40000,50000,60000,75000,100000 }, // 25
+		{ 50,75,100,150,200,250,500,750,1000,1500,2000,2500,3000,4000,5000,6000,7500,10000,12500,15000,20000,25000,30000,40000,50000,60000,75000,100000 }, // 28
+		{ 500,1000,2500,5000,7500,10000,15000,20000,25000,30000,40000,50000,75000,100000 }, // 14
+		{ 5000,10000,15000,20000,25000,30000,40000,50000,60000,75000,100000,125000,150000,200000,300000 } }; // 15
 
 	if (type == 1)
-		switch (lootValue(typeA, value))
+		switch (lootValue(types[0], value))
 		{
+		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
+			break;
 		case 0: ss << coinGen(5, 10, 1) << coinGen(3, 4, 2);
 			break;
 		case 1: ss << coinGen(2, 6, 1, 10) << coinGen(4, 8, 2) << coinGen(1, 4, 3);
@@ -4583,8 +4588,10 @@ void genFirst(int type, double value)
 			break;
 		}
 	else if (type == 2)
-		switch (lootValue(typeB, value))
+		switch (lootValue(types[1], value))
 		{
+		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
+			break;
 		case 0: ss << gemGen(1);
 			break;
 		case 1: ss << coinGen(2, 6, 1, 10) << coinGen(4, 8, 2) << coinGen(1, 4, 3) << gemGen(1);
@@ -4623,8 +4630,10 @@ void genFirst(int type, double value)
 			break;
 			}
 	else if (type == 3)
-		switch (lootValue(typeC, value))
+		switch (lootValue(types[2], value))
 		{
+		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
+			break;
 		case 0: ss << artGen(1);
 			break;
 		case 1: ss << artGen(2, 1);
@@ -4663,8 +4672,10 @@ void genFirst(int type, double value)
 			break;
 		}
 	else if (type == 4)
-		switch (lootValue(typeD, value))
+		switch (lootValue(types[3], value))
 		{
+		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
+			break;
 		case 0: ss << coinGen(3, 6, 2, 10) + coinGen(4, 4, 3) + scrollGen(1);
 			break;
 		case 1: ss << coinGen(4, 6, 2, 10) + coinGen(3, 10, 3) + scrollGen(1) + potGen(1);
@@ -4715,8 +4726,10 @@ void genFirst(int type, double value)
 			break;
 		}
 	else if (type == 5)
-		switch (lootValue(typeE, value))
+		switch (lootValue(types[4], value))
 		{
+		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
+			break;
 		case 1: ss << armorGen(0);
 			break;
 		case 2: ss << armorGen(0);
@@ -4769,8 +4782,10 @@ void genFirst(int type, double value)
 			break;
 		}
 	else if (type == 6)
-		switch (lootValue(typeF, value))
+		switch (lootValue(types[5], value))
 		{
+		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
+			break;
 		case 1: ss << coinGen(2, 4, 2, 10) + coinGen(2, 4, 3) + potGen(1);
 			break;
 		case 2: ss << coinGen(2, 4, 2, 10) + coinGen(2, 4, 3) + armorGen(0) + potGen(1);
@@ -4826,8 +4841,10 @@ void genFirst(int type, double value)
 			break;
 		}
 	else if (type == 7)
-		switch (lootValue(typeG, value))
+		switch (lootValue(types[6], value))
 		{
+		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
+			break;
 		case 1: ss << coinGen(2, 4, 2, 10) + coinGen(2, 4, 3) + potGen(1);
 			break;
 		case 2: ss << coinGen(2, 4, 3) + potGen(1) + scrollGen(1);
@@ -4888,30 +4905,81 @@ void genFirst(int type, double value)
 			break;
 		}
 	else if (type == 8)
-		switch (lootValue(typeH, value))
+		switch (lootValue(types[7], value))
 		{
-		case 1:
-		case 2:
-		case 3:
-		case 4:
-		case 5:
-		case 6:
-		case 7:
-		case 8:
-		case 9:
-		case 10:
-		case 11:
-		case 12:
-		case 13:
-		case 14:
-		default:
+		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
+			break;
+		case 1: ss << coinGen(4, 4, 1, 100) + coinGen(3, 6, 2, 10) + coinGen(2, 4, 3, 10) + weaponGen(0) + potGen(1) + scrollGen(1) + gemGen(2);
+			break;
+		case 2: ss << coinGen(2, 4, 1, 100) + coinGen(2, 6, 2, 100) + coinGen(6, 6, 3) + potGen(2) + scrollGen(2) + wandGen(1) + gemGen(3, 1);
+			break;
+		case 3: ss << coinGen(3, 6, 2, 10) + coinGen(2, 4, 3) + armorGen(0) + weaponGen(0) + potGen(2, 3) + scrollGen(2, 2) + gemGen(2);
+			break;
+		case 4: ss << coinGen(2, 4, 3, 10) + coinGen(4, 6, 4) + weaponGen(0) + ringGen(1) + potGen(4) + scrollGen(3) + wandGen(2);
+			break;
+		case 5: ss << coinGen(4, 4, 3, 10) + coinGen(6, 6, 4) + weaponGen(1) + wGen(1) + potGen(2, 4) + wandGen(2) + gemGen(2, 3);
+			break;
+		case 6: ss << coinGen(4, 8, 3, 10) + coinGen(6, 10, 4) + armorGen(2) + ringGen(1) + wGen(1) + scrollGen(3) + wandGen(2) + gemGen(4);
+			break;
+		case 7: ss << coinGen(4, 4, 3, 10) + coinGen(4, 4, 4, 10) + armorGen(2) + wGen(1) + potGen(2, 4) + scrollGen(2, 4) + wandGen(3) + gemGen(3);
+			break;
+		case 8: ss << coinGen(2, 4, 4, 10) + ringGen(2) + wGen(2, 1) + potGen(2, 4) + scrollGen(2, 5) + wandGen(3);
+			break;
+		case 9: ss << coinGen(6, 10, 3, 10) + coinGen(6, 6, 4) + armorGen(3) + weaponGen(1) + wGen(2) + scrollGen(2, 5) + wandGen(3) + gemGen(4);
+			break;
+		case 10: ss << coinGen(6, 6, 3, 10) + coinGen(2, 4, 4, 10) + weaponGen(2) + wGen(3) + wandGen(4) + gemGen(3, 3);
+			break;
+		case 11: ss << coinGen(4, 4, 3, 10) + coinGen(4, 4, 4, 10) + ringGen(3) + rodGen(3) + potGen(2, 6) + scrollGen(2, 5) + wandGen(5);
+			break;
+		case 12: ss << coinGen(4, 4, 4, 10) + armorGen(4) + staffGen(3) + wGen(3) + scrollGen(6) + wandGen(3) + gemGen(5);
+			break;
+		case 13: ss << coinGen(2, 8, 3, 100) + coinGen(4, 4, 4, 10) + weaponGen(2) + ringGen(4) + staffGen(4) + potGen(3, 6) + scrollGen(6) + wandGen(5) + gemGen(5);
+			break;
+		case 14: ss << coinGen(8, 6, 3, 100) + coinGen(4, 4, 4, 10) + ringGen(5) + wGen(5) + potGen(3, 6) + scrollGen(6) + wandGen(3) + gemGen(2, 5) + gemGen(6);
+			break;
+		default: std::cout << "Error Code 4753\n";
+			break;
 		}
 	else if (type == 9)
-	{
-
-	}
-
+		switch (lootValue(types[8], value))
+		{
+		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
+			break;
+		case 1: coinGen(4, 4, 1, 100) + coinGen(6, 6, 2, 100) + coinGen(2, 4, 3, 100) + coinGen(6, 6, 4) + armorGen(1) + wandGen(2) + gemGen(5, 3) + artGen(3);
+			break;
+		case 2: coinGen(4, 4, 1, 100) + coinGen(6, 6, 2, 100) + coinGen(2, 4, 3, 100) + coinGen(6, 6, 4) + armorGen(2) + weaponGen(1) + wGen(1) + scrollGen(4) + gemGen(4) + artGen(3);
+			break;
+		case 3: coinGen(2, 4, 1, 1000) + coinGen(6, 4, 2, 100) + coinGen(3, 6, 3, 10) + coinGen(6, 6, 4) + ringGen(2) + wGen(2, 1) + potGen(2, 4) + wandGen(2) + gemGen(4) + artGen(3);
+			break;
+		case 4: coinGen(2, 4, 1, 1000) + coinGen(6, 4, 2, 100) + coinGen(3, 6, 3, 10) + coinGen(6, 6, 4) + armorGen(2) + rodGen(3) + wGen(2) + potGen(2, 5) + scrollGen(4) + artGen(3, 3);
+			break;
+		case 5: coinGen(2, 4, 1, 1000) + coinGen(6, 4, 2, 100) + coinGen(3, 6, 3, 10) + coinGen(6, 6, 4) + staffGen(3) + wGen(2, 1) + potGen(4) + wandGen(3) + gemGen(2, 2) + gemGen(2, 3) + gemGen(4);
+			break;
+		case 6: coinGen(2, 4, 1, 1000) + coinGen(6, 4, 2, 100) + coinGen(3, 6, 3, 10) + coinGen(6, 6, 4) + armorGen(3) + weaponGen(2) + wGen(3) + scrollGen(2, 5) + artGen(4);
+			break;
+		case 7: coinGen(4, 4, 1, 100) + coinGen(6, 6, 2, 100) + coinGen(2, 4, 3, 100) + coinGen(6, 6, 4) + weaponGen(3) + rodGen(4) + potGen(6) + scrollGen(4) + wandGen(3) + artGen(3, 3) + artGen(2, 4);
+			break;
+		case 8: coinGen(4, 4, 1, 10000) + coinGen(6, 6, 2, 1000) + coinGen(4, 4, 3, 100) + coinGen(2, 4, 4, 10) + armorGen(2) + weaponGen(2, 2) + staffGen(4) + wGen(2) + gemGen(5);
+			break;
+		case 9: coinGen(2, 4, 1, 10000) + coinGen(2, 4, 2, 1000) + coinGen(2, 4, 3, 100) + coinGen(2, 4, 4, 10) + weaponGen(4)+ rodGen(4) + wGen(3) + scrollGen(6) + wandGen(2, 2) + gemGen(4) + artGen(5, 2);
+			break;
+		case 10: coinGen(2, 4, 1, 10000) + coinGen(2, 4, 2, 1000) + coinGen(2, 4, 3, 100) + coinGen(2, 4, 4, 10) + armorGen(5) + ringGen(4) + staffGen(3) + wandGen(4) + gemGen(6) + artGen(4);
+			break;
+		case 11: coinGen(2, 4, 1, 10000) + coinGen(2, 4, 2, 1000) + coinGen(2, 4, 3, 100) + coinGen(2, 4, 4, 10) + weaponGen(3) + ringGen(4) + rodGen(5) + wGen(4) + potGen(2, 6) + scrollGen(3) + artGen(2, 4);
+			break;
+		case 12: coinGen(4, 4, 1, 10000) + coinGen(6, 6, 2, 1000) + coinGen(4, 4, 3, 100) + coinGen(2, 8, 4, 10) + armorGen(6) + weaponGen(3) + staffGen(5) + scrollGen(2, 6) + wandGen(6) + gemGen(6) + artGen(3, 4);
+			break;
+		case 13: coinGen(4, 4, 1, 10000) + coinGen(6, 6, 2, 1000) + coinGen(4, 4, 3, 100) + coinGen(2, 8, 4, 10) + armorGen(4) + ringGen(5) + wGen(6) + wandGen(6);
+			break;
+		case 14: coinGen(4, 4, 1, 10000) + coinGen(6, 6, 2, 1000) + coinGen(4, 4, 3, 100) + coinGen(2, 8, 4, 10) + weaponGen(6) + ringGen(2, 3) + staffGen(5) + wGen(5) + wandGen(5) + gemGen(3, 5) + gemGen(4);
+			break;
+		case 15: coinGen(8, 4, 1, 10000) + coinGen(12, 6, 2, 1000) + coinGen(8, 4, 3, 100) + coinGen(2, 8, 4, 10) + weaponGen(6) + ringGen(5) + staffGen(6) + wGen(6) + wandGen(4) + gemGen(6) + artGen(6);
+			break;
+		default: 
+			break;
+		}
 	std::cout << ss.str();
+	return lootValue(types[type - 1], value);
 }
 int main()
 {
@@ -4919,8 +4987,8 @@ int main()
 	double modifier, value;
 	int npcVal[20] = { 260, 390, 780, 1650, 2400, 3450, 4650, 6000, 7800, 10050, 12750, 16350, 21000, 27000, 34800, 45000, 58500, 75000, 96000, 123000 },
 		crVal[20] = { 400, 800, 1200, 1700, 2300, 3000, 3900, 5000, 6400, 8200, 10500, 13500, 17500, 22000, 29000, 38000, 48000, 62000, 79000, 100000 };
-
 	srand((unsigned int)time(NULL));
+
 	do
 	{
 		std::cout << "What CR was the encounter?\n";
@@ -4956,19 +5024,21 @@ int main()
 
 	do
 	{
-		std::cout << "What kind of treasure do you want to generate?\n";
-		std::cout << "1. Coins\n\tTreasure of this type consists entirely of coins\n";
-		std::cout << "2. Coins and Gems\n\tthis type also includes gemstones, some of which can be quite valuable\n";
-		std::cout << "3. Art Objects\n\t these items are valuable for their beauty and craftsmanship and are made with precious metals, gems, and other fine materials\n";
-		std::cout << "4. Coins and Small Objects\n\tcoins and small magic items, such as potions, rings, scrolls, and wands\n";
-		std::cout << "5. Armor and Weapons\n\tsolely weapons and armor\n";
-		std::cout << "6. Combatant Gear\n\tarmor, coins, potions, weapons, and wondrous items\n";
-		std::cout << "7. Spellcaster Gear\n\tcoins, potions, scrolls, staves, wands, and wondrous items\n";
-		std::cout << "8. Lair Treasure\n\ta large number of magic items, coins, and other valuables\n";
-		std::cout << "9. Treasure Hoard\n\tthis can contain virtually any type of item\n";
-		std::cin >> type;
-		system("cls");
-	} while (type > 9 || type < 1);
-	genFirst(type, value);
+		do
+		{
+			std::cout << "What kind of treasure do you want to generate?\n";
+			std::cout << "1. Coins\n\tTreasure of this type consists entirely of coins\n";
+			std::cout << "2. Coins and Gems\n\tthis type also includes gemstones, some of which can be quite valuable\n";
+			std::cout << "3. Art Objects\n\t these items are valuable for their beauty and craftsmanship and are made with precious metals, gems, and other fine materials\n";
+			std::cout << "4. Coins and Small Objects\n\tcoins and small magic items, such as potions, rings, scrolls, and wands\n";
+			std::cout << "5. Armor and Weapons\n\tsolely weapons and armor\n";
+			std::cout << "6. Combatant Gear\n\tarmor, coins, potions, weapons, and wondrous items\n";
+			std::cout << "7. Spellcaster Gear\n\tcoins, potions, scrolls, staves, wands, and wondrous items\n";
+			std::cout << "8. Lair Treasure\n\ta large number of magic items, coins, and other valuables\n";
+			std::cout << "9. Treasure Hoard\n\tthis can contain virtually any type of item\n";
+			std::cin >> type;
+			system("cls");
+		} while (type > 9 || type < 1);
+	} while (genFirst(type, value) >= 0);
 	return 0;
 }
