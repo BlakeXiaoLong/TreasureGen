@@ -4314,7 +4314,10 @@ std::string staffGen(int subtype)
 }
 std::string staffGen(int multiple, int subtype)
 {
-
+	std::stringstream ss;
+	for (int i = 0; i < multiple; i++)
+		ss << staffGen(subtype);
+	return ss.str();
 }
 std::string rodGen(int subtype)
 {
@@ -4338,7 +4341,10 @@ std::string rodGen(int subtype)
 }
 std::string rodGen(int multiple, int subtype)
 {
-
+	std::stringstream ss;
+	for (int i = 0; i < multiple; i++)
+		ss << rodGen(subtype);
+	return ss.str();
 }
 std::string mGen(int subtype)
 {
@@ -4360,7 +4366,10 @@ std::string mGen(int subtype)
 }
 std::string mGen(int multiple, int subtype)
 {
-
+	std::stringstream ss;
+	for (int i = 0; i < multiple; i++)
+		ss << mGen(subtype);
+	return ss.str();
 }
 
 void genFirst(int type, double value)
@@ -4655,57 +4664,57 @@ void genFirst(int type, double value)
 			break;
 		case 2: ss << coinGen(2, 4, 3) + potGen(1) + scrollGen(1);
 			break;
-		case 3: potGen(1) + scrollGen(2, 1);
+		case 3: ss << potGen(1) + scrollGen(2, 1);
 			break;
-		case 4: scrollGen(1) + scrollGen(2);
+		case 4: ss << scrollGen(1) + scrollGen(2);
 			break;
-		case 5: potGen(2, 1) + scrollGen(2);
+		case 5: ss << potGen(2, 1) + scrollGen(2);
 			break;
-		case 6: scrollGen(2, 2);
+		case 6: ss << scrollGen(2, 2);
 			break;
-		case 7: potGen(3, 1) + scrollGen(3, 1);
+		case 7: ss << potGen(3, 1) + scrollGen(3, 1);
 			break;
-		case 8: potGen(2) + wandGen(1);
+		case 8: ss << potGen(2) + wandGen(1);
 			break;
-		case 9: coinGen(7, 6, 3) + scrollGen(3, 2) + wandGen(1);
+		case 9: ss << coinGen(7, 6, 3) + scrollGen(3, 2) + wandGen(1);
 			break;
-		case 10: coinGen(3, 6, 3, 10) + potGen(3) + scrollGen(3) + wandGen(1);
+		case 10: ss << coinGen(3, 6, 3, 10) + potGen(3) + scrollGen(3) + wandGen(1);
 			break;
-		case 11: coinGen(2, 4, 3, 10) + weaponGen(0) + scrollGen(2, 3) + wandGen(1);
+		case 11: ss << coinGen(2, 4, 3, 10) + weaponGen(0) + scrollGen(2, 3) + wandGen(1);
 			break;
-		case 12: potGen(2, 4) + wandGen(2);
+		case 12: ss << potGen(2, 4) + wandGen(2);
 			break;
-		case 13: potGen(4) + scrollGen(2, 3) + wandGen(2);
+		case 13: ss << potGen(4) + scrollGen(2, 3) + wandGen(2);
 			break;
-		case 14: wGen(1) + potGen(4) + wandGen(2);
+		case 14: ss << wGen(1) + potGen(4) + wandGen(2);
 			break;
-		case 15: ringGen(1) + wGen(1) + scrollGen(2, 1);
+		case 15: ss << ringGen(1) + wGen(1) + scrollGen(2, 1);
 			break;
-		case 16: ringGen(1) + wGen(1) + potGen(4) + wandGen(2);
+		case 16: ss << ringGen(1) + wGen(1) + potGen(4) + wandGen(2);
 			break;
-		case 17: potGen(2, 4) + scrollGen(1) + wandGen(3);
+		case 17: ss << potGen(2, 4) + scrollGen(1) + wandGen(3);
 			break;
-		case 18: ringGen(1) + wGen(1) + wandGen(3);
+		case 18: ss << ringGen(1) + wGen(1) + wandGen(3);
 			break;
-		case 19: ringGen(1) + wGen(2) + scrollGen(2, 4) + wandGen(2, 2);
+		case 19: ss << ringGen(1) + wGen(2) + scrollGen(2, 4) + wandGen(2, 2);
 			break;
-		case 20: ringGen(1) + rodGen(3) + wandGen(3); // rods 'n staves
+		case 20: ss << ringGen(1) + rodGen(3) + wandGen(3);
 			break;
-		case 21: ringGen(2) + wGen(2) + potGen(4) + scrollGen(2, 4) + wandGen(3);
+		case 21: ss << ringGen(2) + wGen(2) + potGen(4) + scrollGen(2, 4) + wandGen(3);
 			break;
-		case 22: ringGen(1) + wandGen(3) + wandGen(4) + wGen(2);
+		case 22: ss << ringGen(1) + wandGen(3) + wandGen(4) + wGen(2);
 			break;
-		case 23: ringGen(2) + wGen(3) + scrollGen(5) + wandGen(4);
+		case 23: ss << ringGen(2) + wGen(3) + scrollGen(5) + wandGen(4);
 			break;
-		case 24: weaponGen(1) + staffGen(3) + rogGen(4) + wGen(2, 1) + wandGen(5);
+		case 24: ss << weaponGen(1) + staffGen(3) + rodGen(4) + wGen(2, 1) + wandGen(5);
 			break;
-		case 25: ringGen(2) + wGen(2, 3) + potGen(5) + scrollGen(3, 4) + wandGen(5);
+		case 25: ss << ringGen(2) + wGen(2, 3) + potGen(5) + scrollGen(3, 4) + wandGen(5);
 			break;
-		case 26: staffGen(3) + rodGen(4) + wGen(4) + potGen(4) + scrollGen(2, 5) + wandGen(3);
+		case 26: ss << staffGen(3) + rodGen(4) + wGen(4) + potGen(4) + scrollGen(2, 5) + wandGen(3);
 			break;
-		case 27: weaponGen(1) + staffGen(4) + wGen(4) + scrollGen(3, 6) + wGen(6);
+		case 27: ss << weaponGen(1) + staffGen(4) + wGen(4) + scrollGen(3, 6) + wGen(6);
 			break;
-		case 28: ringGen(5) + rodGen(4) + staffGen(5) + scrollGen(5) + wandGen(4);
+		case 28: ss << ringGen(5) + rodGen(4) + staffGen(5) + scrollGen(5) + wandGen(4);
 			break;
 		default: std::cout << "Error Code 4639\n";
 			break;
@@ -4713,7 +4722,21 @@ void genFirst(int type, double value)
 	else if (type == 8)
 		switch (lootValue(typeH, value))
 		{
-
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+		case 11:
+		case 12:
+		case 13:
+		case 14:
+		default:
 		}
 	else if (type == 9)
 	{
