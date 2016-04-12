@@ -5,69 +5,6 @@
 #include <sstream>
 #include <time.h>
 
-void genFirst();
-
-int CR, type;
-double modifier, value;
-int npcVal[20] = { 260, 390, 780, 1650, 2400, 3450, 4650, 6000, 7800, 10050, 12750, 16350, 21000, 27000, 34800, 45000, 58500, 75000, 96000, 123000 },
-crVal[20] = { 400, 800, 1200, 1700, 2300, 3000, 3900, 5000, 6400, 8200, 10500, 13500, 17500, 22000, 29000, 38000, 48000, 62000, 79000, 100000 };
-std::string loot;
-
-int main()
-{
-	srand((unsigned int)time(NULL));
-	do
-	{
-		std::cout << "What CR was the encounter?\n";
-		std::cin >> CR;
-		system("cls");
-		std::cout << "How much treasure do you want to generate?\n";
-		std::cout << "1. Incidental\n";
-		std::cout << "2. Normal\n";
-		std::cout << "3. Double\n";
-		std::cout << "4. Triple\n";
-		std::cout << "5. NPC Gear\n";
-		std::cin >> modifier;
-		system("cls");
-
-		if (modifier == 5)
-		{
-			int level;
-			do
-			{
-				level = 0;
-				std::cout << "What level was the NPC?\n";
-				std::cin >> level;
-				value += npcVal[level - 1];
-				std::cout << "Was there another NPC?\n";
-				std::cout << "1. Yes\n";
-				std::cout << "2. No\n";
-				std::cin >> level;
-				system("cls");
-			} while (level == 1);
-		}
-	} while (modifier > 5 || modifier < 1);
-	if (modifier != 5) value = crVal[CR - 1] * modifier;
-
-	do
-	{
-		std::cout << "What kind of treasure do you want to generate?\n";
-		std::cout << "1. Coins\n\tTreasure of this type consists entirely of coins\n";
-		std::cout << "2. Coins and Gems\n\tthis type also includes gemstones, some of which can be quite valuable\n";
-		std::cout << "3. Art Objects\n\t these items are valuable for their beauty and craftsmanship and are made with precious metals, gems, and other fine materials\n";
-		std::cout << "4. Coins and Small Objects\n\tcoins and small magic items, such as potions, rings, scrolls, and wands\n";
-		std::cout << "5. Armor and Weapons\n\tsolely weapons and armor\n";
-		std::cout << "6. Combatant Gear\n\tarmor, coins, potions, weapons, and wondrous items\n";
-		std::cout << "7. Spellcaster Gear\n\tcoins, potions, scrolls, staves, wands, and wondrous items\n";
-		std::cout << "8. Lair Treasure\n\ta large number of magic items, coins, and other valuables\n";
-		std::cout << "9. Treasure Hoard\n\tthis can contain virtually any type of item\n";
-		std::cin >> type;
-		system("cls");
-	} while (type > 9 || type < 1);
-	genFirst();
-	return 0;
-}
-
 int roll(int numOfRolls, int dice)
 {
 	int result = 0;
@@ -82,7 +19,7 @@ int roll(int numOfRolls, int dice, int multiplier)
 		result += rand() % dice + 1;
 	return (result*multiplier);
 }
-int lootValue(std::vector<int> values)
+int lootValue(std::vector<int> values, double value)
 {
 	for (int i = values.size() - 1; i > 0; i--)
 		if (value > values.at(i))
@@ -3962,7 +3899,7 @@ std::string wGen(int subtype)
 	else if (rollG < 101) // Slotless
 		switch (subtype)
 		{
-		case 1:
+		case 0:
 			if (rollA < 2) ss << "Feather Token (Anchor)";
 			else if (rollA < 3) ss << "Universal Solvent";
 			else if (rollA < 5) ss << "Ioun Torch";
@@ -4011,8 +3948,8 @@ std::string wGen(int subtype)
 			else if (rollA < 101) ss << "Dust of Dryness";
 			else std::cout << "Error Code 3555\n";
 			break;
-		case 2:
-			if (rollA < 4) ss << wGen(1);
+		case 1:
+			if (rollA < 4) ss << wGen(0);
 			else if (rollA < 5) ss << "Anatomy Doll";
 			else if (rollA < 6) ss << "Bead of Newt Prevention";
 			else if (rollA < 7) ss << "Beast-Bond Brand";
@@ -4074,7 +4011,7 @@ std::string wGen(int subtype)
 			else if (rollA < 101) ss << "Volatile Vaporizer (3rd)";
 			else std::cout << "Error Code 3618\n";
 			break;
-		case 3:
+		case 2:
 			if (rollA < 2) ss << "Boro Bead (2nd)";
 			else if (rollA < 3) ss << "Cautionary Creance";
 			else if (rollA < 4) ss << "Escape Ladder";
@@ -4134,7 +4071,7 @@ std::string wGen(int subtype)
 			else if (rollA < 101) ss << "Manual of War";
 			else std::cout << "Error Code 3678\n";
 			break;
-		case 4:
+		case 3:
 			if (rollA < 2) ss << "Chalice of Poison Weeping";
 			else if (rollA < 3) ss << "Exorcist's Aspergillum";
 			else if (rollA < 4) ss << "Golem Manual, Flesh";
@@ -4213,7 +4150,7 @@ std::string wGen(int subtype)
 			else if (rollA < 101) ss << "Figurine of Wondrous Power (Marble Elephant)";
 			else std::cout << "Error Code 3757\n";
 			break;
-		case 5:
+		case 4:
 			if (rollA < 4) ss << "Ioun Stone (Iridescent Spindle)";
 			else if (rollA < 5) ss << "Orb of Foul Abaddon";
 			else if (rollA < 9) ss << "Carpet of Flying (5ft. by 5ft.)";
@@ -4247,7 +4184,7 @@ std::string wGen(int subtype)
 			else if (rollA < 101) ss << "Tome of Understanding +1";
 			else std::cout << "Error Code 3791\n";
 			break;
-		case 6:
+		case 5:
 			if (rollA < 5) ss << "Figurine of Wondrous Power (Obsidian Steed)";
 			else if (rollA < 8) ss << "Cauldron of the Dead";
 			else if (rollA < 12) ss << "Drums of Panic";
@@ -4278,7 +4215,7 @@ std::string wGen(int subtype)
 			else if (rollA < 101) ss << "Pearl of Power (7th)";
 			else std::cout << "Error Code 3822\n";
 			break;
-		case 7:
+		case 6:
 			if (rollA < 4) ss << "Crystal Ball with See Invisibility";
 			else if (rollA < 6) ss << "Horn of Valhalla";
 			else if (rollA < 9) ss << "Crystal Ball with Detect Thoughts";
@@ -4340,6 +4277,7 @@ std::string wGen(int subtype)
 			else std::cout << "Error Code 3883\n";
 			break;
 		default:
+			std::cout << "Error Code 4343\n";
 			break;
 		}
 	else
@@ -4354,19 +4292,91 @@ std::string wGen(int multiple, int subtype)
 		ss << wGen(subtype);
 	return ss.str();
 }
+std::string staffGen(int subtype)
+{
+	int rollA = roll(1, 100);
+	std::stringstream ss;
+	switch (subtype)
+	{
+	case 3:
+		break;
+	case 4:
+		break;
+	case 5:
+		break;
+	case 6:
+		break;
+	default:
+		break;
+	}
+	ss << std::endl;
+	return ss.str();
+}
+std::string staffGen(int multiple, int subtype)
+{
 
-void genFirst()
+}
+std::string rodGen(int subtype)
+{
+	int rollA = roll(1, 100);
+	std::stringstream ss;
+	switch (subtype)
+	{
+	case 3:
+		break;
+	case 4:
+		break;
+	case 5:
+		break;
+	case 6:
+		break;
+	default:
+		break;
+	}
+	ss << std::endl;
+	return ss.str();
+}
+std::string rodGen(int multiple, int subtype)
+{
+
+}
+std::string mGen(int subtype)
+{
+	int rollA = roll(1, 100);
+	std::stringstream ss;
+	switch (subtype)
+	{
+	case 1:
+		break;
+	case 2:
+		break;
+	case 3:
+		break;
+	default:
+		break;
+	}
+	ss << std::endl;
+	return ss.str();
+}
+std::string mGen(int multiple, int subtype)
+{
+
+}
+
+void genFirst(int type, double value)
 {
 	std::stringstream ss;
-	std::vector<int> typeA = { 1,5,10,25,50,100,200,500,1000,5000,10000,50000 };
-	std::vector<int> typeB = { 10,15,25,50,75,100,150,200,250,500,750,1000,2500,5000,10000,20000,50000 };
-	std::vector<int> typeC = { 50,100,150,200,250,500,750,1000,1500,2000,2500,5000,7500,10000,15000,20000,50000 };
-	std::vector<int> typeD = { 50,100,150,200,250,300,400,500,750,1000,1500,2000,3000,4000,5000,7500,10000,15000,20000,25000,30000,50000 };
-	std::vector<int> typeE = { 200,300,350,1000,1500,2500,3000,4000,5500,6000,7500,8000,9000,10000,13000,15000,20000,25000,30000,35000,40000,50000,75000,100000 };
-	std::vector<int> typeF = { 50,250,350,400,500,750,1000,1500,2000,3000,4000,5000,6000,7500,10000,12500,15000,20000,25000,30000,40000,50000,60000,75000,100000 };
+	std::vector<int> typeA = { 1,5,10,25,50,100,200,500,1000,5000,10000,50000 }; // 12
+	std::vector<int> typeB = { 10,15,25,50,75,100,150,200,250,500,750,1000,2500,5000,10000,20000,50000 }; // 17
+	std::vector<int> typeC = { 50,100,150,200,250,500,750,1000,1500,2000,2500,5000,7500,10000,15000,20000,50000 }; // 17
+	std::vector<int> typeD = { 50,100,150,200,250,300,400,500,750,1000,1500,2000,3000,4000,5000,7500,10000,15000,20000,25000,30000,50000 }; // 22
+	std::vector<int> typeE = { 200,300,350,1000,1500,2500,3000,4000,5500,6000,7500,8000,9000,10000,13000,15000,20000,25000,30000,35000,40000,50000,75000,100000 }; // 24
+	std::vector<int> typeF = { 50,250,350,400,500,750,1000,1500,2000,3000,4000,5000,6000,7500,10000,12500,15000,20000,25000,30000,40000,50000,60000,75000,100000 }; // 25
+	std::vector<int> typeG = { 50,75,100,150,200,250,500,750,1000,1500,2000,2500,3000,4000,5000,6000,7500,10000,12500,15000,20000,25000,30000,40000,50000,60000,75000,100000 }; // 28
+	std::vector<int> typeH = { 500,1000,2500,5000,7500,10000,15000,20000,25000,30000,40000,50000,75000,100000 }; // 14
 
 	if (type == 1)
-		switch (lootValue(typeA))
+		switch (lootValue(typeA, value))
 		{
 		case 0: ss << coinGen(5, 10, 1) << coinGen(3, 4, 2);
 			break;
@@ -4396,7 +4406,7 @@ void genFirst()
 			break;
 		}
 	else if (type == 2)
-		switch (lootValue(typeB))
+		switch (lootValue(typeB, value))
 		{
 		case 0: ss << gemGen(1);
 			break;
@@ -4436,7 +4446,7 @@ void genFirst()
 			break;
 			}
 	else if (type == 3)
-		switch (lootValue(typeC))
+		switch (lootValue(typeC, value))
 		{
 		case 0: ss << artGen(1);
 			break;
@@ -4476,7 +4486,7 @@ void genFirst()
 			break;
 		}
 	else if (type == 4)
-		switch (lootValue(typeD))
+		switch (lootValue(typeD, value))
 		{
 		case 0: ss << coinGen(3, 6, 2, 10) + coinGen(4, 4, 3) + scrollGen(1);
 			break;
@@ -4528,7 +4538,7 @@ void genFirst()
 			break;
 		}
 	else if (type == 5)
-		switch (lootValue(typeE))
+		switch (lootValue(typeE, value))
 		{
 		case 1: ss << armorGen(0);
 			break;
@@ -4582,7 +4592,7 @@ void genFirst()
 			break;
 		}
 	else if (type == 6)
-		switch (lootValue(typeF))
+		switch (lootValue(typeF, value))
 		{
 		case 1: ss << coinGen(2, 4, 2, 10) + coinGen(2, 4, 3) + potGen(1);
 			break;
@@ -4604,20 +4614,170 @@ void genFirst()
 			break;
 		case 10: ss << armorGen(0) + weaponGen(1) + potGen(2);
 			break;
+		case 11: ss << armorGen(1) + weaponGen(0) + wGen(1) + potGen(2);
+			break;
+		case 12: ss << armorGen(0) + weaponGen(1) + wGen(1) + potGen(2);
+			break;
+		case 13: ss << armorGen(1) + weaponGen(1) + wGen(1);
+			break;
+		case 14: ss << armorGen(2) + weaponGen(1) + ringGen(1);
+			break;
+		case 15: ss << armorGen(2) + weaponGen(1) + ringGen(1) + wGen(1) + potGen(3, 2);
+			break;
+		case 16: ss << armorGen(2) + weaponGen(1) + wGen(2) + potGen(2, 4);
+			break;
+		case 17: ss << armorGen(2) + weaponGen(2) + ringGen(2);
+			break;
+		case 18: ss << armorGen(3) + weaponGen(2) + wGen(2) + potGen(2, 4);
+			break;
+		case 19: ss << armorGen(3) + weaponGen(3) + ringGen(1) + wGen(1) + potGen(2, 4);
+			break;
+		case 20: ss << armorGen(3) + weaponGen(3) + ringGen(2, 1) + wGen(2);
+			break;
+		case 21: ss << armorGen(3) + weaponGen(3) + ringGen(3) + wGen(2) + potGen(2, 4);
+			break;
+		case 22: ss << armorGen(4) + weaponGen(4) + wGen(3) + potGen(2, 5);
+			break;
+		case 23: ss << armorGen(4) + weaponGen(4) + ringGen(2, 2) + wGen(2, 2);
+			break;
+		case 24: ss << armorGen(5) + weaponGen(4) + ringGen(2) + wGen(4) + potGen(3, 6);
+			break;
+		case 25: ss << armorGen(5) + weaponGen(5) + ringGen(3) + ringGen(2) + wGen(2, 3);
+			break;
+		default:
+			std::cout << "Error Code 2639\n";
+			break;
 		}
 	else if (type == 7)
-	{
-
-	}
+		switch (lootValue(typeG, value))
+		{
+		case 1: ss << coinGen(2, 4, 2, 10) + coinGen(2, 4, 3) + potGen(1);
+			break;
+		case 2: ss << coinGen(2, 4, 3) + potGen(1) + scrollGen(1);
+			break;
+		case 3: potGen(1) + scrollGen(2, 1);
+			break;
+		case 4: scrollGen(1) + scrollGen(2);
+			break;
+		case 5: potGen(2, 1) + scrollGen(2);
+			break;
+		case 6: scrollGen(2, 2);
+			break;
+		case 7: potGen(3, 1) + scrollGen(3, 1);
+			break;
+		case 8: potGen(2) + wandGen(1);
+			break;
+		case 9: coinGen(7, 6, 3) + scrollGen(3, 2) + wandGen(1);
+			break;
+		case 10: coinGen(3, 6, 3, 10) + potGen(3) + scrollGen(3) + wandGen(1);
+			break;
+		case 11: coinGen(2, 4, 3, 10) + weaponGen(0) + scrollGen(2, 3) + wandGen(1);
+			break;
+		case 12: potGen(2, 4) + wandGen(2);
+			break;
+		case 13: potGen(4) + scrollGen(2, 3) + wandGen(2);
+			break;
+		case 14: wGen(1) + potGen(4) + wandGen(2);
+			break;
+		case 15: ringGen(1) + wGen(1) + scrollGen(2, 1);
+			break;
+		case 16: ringGen(1) + wGen(1) + potGen(4) + wandGen(2);
+			break;
+		case 17: potGen(2, 4) + scrollGen(1) + wandGen(3);
+			break;
+		case 18: ringGen(1) + wGen(1) + wandGen(3);
+			break;
+		case 19: ringGen(1) + wGen(2) + scrollGen(2, 4) + wandGen(2, 2);
+			break;
+		case 20: ringGen(1) + rodGen(3) + wandGen(3); // rods 'n staves
+			break;
+		case 21: ringGen(2) + wGen(2) + potGen(4) + scrollGen(2, 4) + wandGen(3);
+			break;
+		case 22: ringGen(1) + wandGen(3) + wandGen(4) + wGen(2);
+			break;
+		case 23: ringGen(2) + wGen(3) + scrollGen(5) + wandGen(4);
+			break;
+		case 24: weaponGen(1) + staffGen(3) + rogGen(4) + wGen(2, 1) + wandGen(5);
+			break;
+		case 25: ringGen(2) + wGen(2, 3) + potGen(5) + scrollGen(3, 4) + wandGen(5);
+			break;
+		case 26: staffGen(3) + rodGen(4) + wGen(4) + potGen(4) + scrollGen(2, 5) + wandGen(3);
+			break;
+		case 27: weaponGen(1) + staffGen(4) + wGen(4) + scrollGen(3, 6) + wGen(6);
+			break;
+		case 28: ringGen(5) + rodGen(4) + staffGen(5) + scrollGen(5) + wandGen(4);
+			break;
+		default: std::cout << "Error Code 4639\n";
+			break;
+		}
 	else if (type == 8)
-	{
+		switch (lootValue(typeH, value))
+		{
 
-	}
+		}
 	else if (type == 9)
 	{
 
 	}
 
-	loot = ss.str();
-	std::cout << loot;
+	std::cout << ss.str();
+}
+int main()
+{
+	int CR, type;
+	double modifier, value;
+	int npcVal[20] = { 260, 390, 780, 1650, 2400, 3450, 4650, 6000, 7800, 10050, 12750, 16350, 21000, 27000, 34800, 45000, 58500, 75000, 96000, 123000 },
+		crVal[20] = { 400, 800, 1200, 1700, 2300, 3000, 3900, 5000, 6400, 8200, 10500, 13500, 17500, 22000, 29000, 38000, 48000, 62000, 79000, 100000 };
+
+	srand((unsigned int)time(NULL));
+	do
+	{
+		std::cout << "What CR was the encounter?\n";
+		std::cin >> CR;
+		system("cls");
+		std::cout << "How much treasure do you want to generate?\n";
+		std::cout << "1. Incidental\n";
+		std::cout << "2. Normal\n";
+		std::cout << "3. Double\n";
+		std::cout << "4. Triple\n";
+		std::cout << "5. NPC Gear\n";
+		std::cin >> modifier;
+		system("cls");
+
+		if (modifier == 5)
+		{
+			int level;
+			do
+			{
+				level = 0;
+				std::cout << "What level was the NPC?\n";
+				std::cin >> level;
+				value += npcVal[level - 1];
+				std::cout << "Was there another NPC?\n";
+				std::cout << "1. Yes\n";
+				std::cout << "2. No\n";
+				std::cin >> level;
+				system("cls");
+			} while (level == 1);
+		}
+	} while (modifier > 5 || modifier < 1);
+	if (modifier != 5) value = crVal[CR - 1] * modifier;
+
+	do
+	{
+		std::cout << "What kind of treasure do you want to generate?\n";
+		std::cout << "1. Coins\n\tTreasure of this type consists entirely of coins\n";
+		std::cout << "2. Coins and Gems\n\tthis type also includes gemstones, some of which can be quite valuable\n";
+		std::cout << "3. Art Objects\n\t these items are valuable for their beauty and craftsmanship and are made with precious metals, gems, and other fine materials\n";
+		std::cout << "4. Coins and Small Objects\n\tcoins and small magic items, such as potions, rings, scrolls, and wands\n";
+		std::cout << "5. Armor and Weapons\n\tsolely weapons and armor\n";
+		std::cout << "6. Combatant Gear\n\tarmor, coins, potions, weapons, and wondrous items\n";
+		std::cout << "7. Spellcaster Gear\n\tcoins, potions, scrolls, staves, wands, and wondrous items\n";
+		std::cout << "8. Lair Treasure\n\ta large number of magic items, coins, and other valuables\n";
+		std::cout << "9. Treasure Hoard\n\tthis can contain virtually any type of item\n";
+		std::cin >> type;
+		system("cls");
+	} while (type > 9 || type < 1);
+	genFirst(type, value);
+	return 0;
 }
