@@ -3894,18 +3894,69 @@ std::string wGen(int subtype)
 		switch (subtype)
 		{
 		case 1:
+			if (rollA < 11) ss << "Sleeves of Many Garments";
+			else if (rollA < 21) ss << "Armbands of the Brawler";
+			else if (rollA < 49) ss << "Bracers of Armor +1";
+			else if (rollA < 64) ss << "Burglar's Bracers";
+			else if (rollA < 92) ss << "Bracers of Steadiness";
+			else if (rollA < 97) ss << "Manacles of Cooperation";
+			else if (rollA < 101) ss << "Shackles of Compliance";
+			else std::cout << "Error Code 3904\n";
 			break;
 		case 2:
+			if (rollA < 28) ss << "Bracers of Armor +2";
+			else if (rollA < 29) ss << "Bracers of Falcon's Aim";
+			else if (rollA < 39) ss << "Inquisitor's Bastion Vambraces";
+			else if (rollA < 66) ss << "Bracers of Archery (lesser)";
+			else if (rollA < 69) ss << "Spellguard Bracers";
+			else if (rollA < 72) ss << "Bonebreaker Gauntlets";
+			else if (rollA < 82) ss << "Vambraces of Defense";
+			else if (rollA < 99) ss << "Verdant Vine";
+			else if (rollA < 100) ss << "Longarm Bracers";
+			else if (rollA < 101) ss << "Bracers of the Glib Entertainer";
+			else std::cout << "Error Code 3917\n";
 			break;
 		case 3:
+			if (rollA < 5) ss << "Charm Bracelet";
+			else if (rollA < 9) ss << "Duelist Vambraces";
+			else if (rollA < 14) ss << "Merciful Vambraces";
+			else if (rollA < 19) ss << "Vambraces of the Tactitian";
+			else if (rollA < 44) ss << "Bracer's of Armor +3";
+			else if (rollA < 54) ss << "Seducer's Bane";
+			else if (rollA < 59) ss << "Bracers of the Avenging Knight";
+			else if (rollA < 64) ss << "Arrowmaster's Bracers";
+			else if (rollA < 74) ss << "Vambraces of the Genie (efreeti)";
+			else if (rollA < 79) ss << "Bracelet of Bargaining";
+			else if (rollA < 83) ss << "Bracers of Mercy";
+			else if (rollA < 87) ss << "Bracers of the Merciful Knight";
+			else if (rollA < 91) ss << "Bracelet of Second Chances";
+			else if (rollA < 100) ss << "Bracers of Armor +4";
+			else if (rollA < 101) ss << "Shackles of Durance Vile";
+			else std::cout << "Error Code 3935\n";
 			break;
 		case 4:
+			if (rollA < 11) ss << "Vambraces of the Genie (djinni)";
+			else if (rollA < 21) ss << "Vambraces of the Genie (marid)";
+			else if (rollA < 31) ss << "Vambraces of the Genie (shaitan)";
+			else if (rollA < 51) ss << "Bracelet of Friends";
+			else if (rollA < 71) ss << "Bracers of Archery (greater)";
+			else if (rollA < 91) ss << "Bracers of Armor +5";
+			else if (rollA < 101) ss << "Bracers of Sworn Venegance";
+			else std::cout << "Error Code 3945\n";
 			break;
 		case 5:
+			if (rollA < 31) ss << "Dimensional Shackles";
+			else if (rollA < 46) ss << "Gauntlets of Skill at Arms";
+			else if (rollA < 101) ss << "Bracers of Armor +6";
+			else std::cout << "Error Code 3951";
 			break;
 		case 6:
+			if (rollA < 61) ss << "Bracers of Armor +7";
+			else if (rollA < 101) ss << "Bracers of Armor +8";
+			else std::cout << "Error Code 3956\n";
 			break;
 		default:
+			std::cout << "Error Code 3959\n";
 			break;
 		}
 	else if (rollG < 101) // Slotless
@@ -4292,7 +4343,7 @@ std::string wGen(int subtype)
 			break;
 		}
 	else
-		std::cout << "Error Code ????\n";
+		std::cout << "Error Code 4346\n";
 	ss << std::endl;
 	return ss.str();
 }
