@@ -4299,12 +4299,90 @@ std::string staffGen(int subtype)
 	switch (subtype)
 	{
 	case 3:
+		if (rollA < 11) ss << "Staff of Blessed Relief";
+		else if (rollA < 21) ss << "Staff of Minor Arcana";
+		else if (rollA < 31) ss << "Staff of Tricks";
+		else if (rollA < 45) ss << "Staff of the Scout";
+		else if (rollA < 55) ss << "Staff of Eidolons";
+		else if (rollA < 68) ss << "Staff of Accompaniment";
+		else if (rollA < 85) ss << "Staff of Understanding";
+		else if (rollA < 101) ss << "Staff of Charming";
+		else std::cout << "Error Code 4310\n";
 		break;
 	case 4:
+		if (rollA < 12) ss << "Staff of Fire";
+		else if (rollA < 22) ss << "Staff of Courage";
+		else if (rollA < 30) ss << "Staff of Belittling";
+		else if (rollA < 39) ss << "Staff of Feast and Famine";
+		else if (rollA < 50) ss << "Staff of Rigor";
+		else if (rollA < 61) ss << "Staff of Swarming Insects";
+		else if (rollA < 69) ss << "Staff of Authority";
+		else if (rollA < 82) ss << "Staff of Radiance";
+		else if (rollA < 93) ss << "Staff of Size Alteration";
+		else if (rollA < 101) ss << "Staff of Journeys";
+		else std::cout << "Error Code 4323\n";
 		break;
 	case 5:
+		if (rollA < 05) ss << "Staff of Acid";
+		else if (rollA < 09) ss << "Staff of Shrieking";
+		else if (rollA < 12) ss << "Chaotic Staff";
+		else if (rollA < 15) ss << "Holy Staff";
+		else if (rollA < 18) ss << "Lawful Staff";
+		else if (rollA < 22) ss << "Staff of Healing";
+		else if (rollA < 25) ss << "Unholy Staff";
+		else if (rollA < 29) ss << "Staff of the Master (Necromancy)";
+		else if (rollA < 33) ss << "Staff of Spiders";
+		else if (rollA < 37) ss << "Staff of Electricity";
+		else if (rollA < 40) ss << "Heretic's Bane";
+		else if (rollA < 43) ss << "Musical Staff";
+		else if (rollA < 47) ss << "Staff of Souls";
+		else if (rollA < 51) ss << "Staff of Toxins";
+		else if (rollA < 55) ss << "Staff of Stealth";
+		else if (rollA < 59) ss << "Staff of the Avenger";
+		else if (rollA < 63) ss << "Staff of Aspects";
+		else if (rollA < 67) ss << "Staff of Speaking";
+		else if (rollA < 71) ss << "Staff of Frost";
+		else if (rollA < 75) ss << "Staff of Bostering";
+		else if (rollA < 79) ss << "Staff of Curses";
+		else if (rollA < 86) ss << "Staff of Dark Flame";
+		else if (rollA < 90) ss << "Staff of Cackling Wrath";
+		else if (rollA < 94) ss << "Staff of Performance";
+		else if (rollA < 98) ss << "Animate Staff";
+		else if (rollA < 101) ss << "Staff of Revelations";
+		else std::cout << "Error Code 4352\n";
 		break;
 	case 6:
+		if (rollA < 5) ss << "Staff of Illumination";
+		else if (rollA < 8) ss << "Staff of Obstacles";
+		else if (rollA < 11) ss << "Staff of Heaven and Earth";
+		else if (rollA < 14) ss << "Staff of Travel";
+		else if (rollA < 17) ss << "Staff of Hoarding";
+		else if (rollA < 20) ss << "Staff of Traps;
+		else if (rollA < 23) ss << "Staff of Many Rays";
+		else if (rollA < 26) ss << "Staff of Mithral Might";
+		else if (rollA < 30) ss << "Staff of Defense";
+		else if (rollA < 33) ss << "Staff of the Planes";
+		else if (rollA < 36) ss << "Staff of Hungry Shadows";
+		else if (rollA < 39) ss << "Dragon Staff";
+		else if (rollA < 42) ss << "Staff of Slumber";
+		else if (rollA < 47) ss << "Staff of Abjuration";
+		else if (rollA < 52) ss << "Staff of Conjuration";
+		else if (rollA < 57) ss << "Staff of Divination;
+		else if (rollA < 62) ss << "Staff of Enchantment";
+		else if (rollA < 67) ss << "Staff of Evocation";
+		else if (rollA < 72) ss << "Staff of Illusion";
+		else if (rollA < 77) ss << "Staff of Necromancy";
+		else if (rollA < 82) ss << "Staff of Transmutation";
+		else if (rollA < 84) ss << "Staff of Weather";
+		else if (rollA < 87) ss << "Staff of Earth and Stone";
+		else if (rollA < 89) ss << "Staff of Vision";
+		else if (rollA < 92) ss << "Staff of the Woddlnads";
+		else if (rollA < 95) ss << "Staff of Life";
+		else if (rollA < 96) ss << "Staff of One Hundred Hands";
+		else if (rollA < 99) ss << "Staff of Passage";
+		else if (rollA < 100) ss << "Staff of the Hierophant";
+		else if (rollA < 101) ss << "Staff of Power";
+		else std::cout << "Error Code 4385\n";
 		break;
 	default:
 		break;
@@ -4326,12 +4404,71 @@ std::string rodGen(int subtype)
 	switch (subtype)
 	{
 	case 3:
+		if (rollA < 2) ss << "Merciful Metamagic Rod, Lesser";
+		else if (rollA < 35) ss << "+1 Spell Level, " + mGen(1) + " Metamagic Rod, Minor";
+		else if (rollA < 50) ss << "Immovable Rod";
+		else if (rollA < 60) ss << "Rod of Thunderous Force";
+		else if (rollA < 61) ss << "Merciful Metamagic Rod, Normal";
+		else if (rollA < 62) ss << "Rod of Ice";
+		else if (rollA < 72) ss << "+2 Spell Level, " + mGen(2) + " Metamagic Rod, Minor";
+		else if (rollA < 82) ss << "Rod of Metal and Mineral Detection";
+		else if (rollA < 87) ss << "+1 Spell Level, " + mGen(1) + " Metamagic Rod, Normal";
+		else if (rollA < 101) ss << "Rod of Cancellation";
+		else std::cout << "Error Code 4417\n";
 		break;
 	case 4:
+		if (rollA < 4) ss << "Conduit Rod";
+		else if (rollA < 7) ss << "Grounding Rod";
+		else if (rollA < 11) ss << "Rod of the Wayang";
+		else if (rollA < 19) ss << "Rod of Wonder";
+		else if (rollA < 20) ss << "Merciful Metamagic Rod, Greater";
+		else if (rollA < 30) ss << "Rod of the Python";
+		else if (rollA < 34) ss << "Trap-Stealer's Rod";
+		else if (rollA < 56) ss << "+3 Spell Level, " + mGen(3) + " Metamagic Rod, Minor";
+		else if (rollA < 60) ss << "Rod of Balance";
+		else if (rollA < 64) ss << "Rod of Escape";
+		else if (rollA < 73) ss << "Rod of Flame Extinguishing";
+		else if (rollA < 77) ss << "Rod of Ruin";
+		else if (rollA < 81) ss << "Sapling Rod";
+		else if (rollA < 87) ss << "Rod of Beguiling";
+		else if (rollA < 91) ss << "Rod of Nettles";
+		else if (rollA < 101) ss << "Rod of the Viper";
+		else std::cout << "Error Code 4436\n";
 		break;
 	case 5:
+		if (rollA < 5) ss << "Suzerain Scepter";
+		else if (rollA < 7) ss << "Fiery Nimbus Rod";
+		else if (rollA < 14) ss << "Rod of Enemy Detection";
+		else if (rollA < 28) ss << "+1 Spell Level, " + mGen(1) + " Metamagic Rod, Greater";
+		else if (rollA < 37) ss << "Rod of Splendor";
+		else if (rollA < 45) ss << "Rod of Withering";
+		else if (rollA < 51) ss << "Earthbind Rod";
+		else if (rollA < 57) ss << "Rod of the Aboleth";
+		else if (rollA < 64) ss << "Liberator's Rod";
+		else if (rollA < 71) ss << "+2 Spell Level, " + mGen(2) + " Metamagic Rod, Normal";
+		else if (rollA < 80) ss << "Rod of Thunder and Lightning";
+		else if (rollA < 84) ss << "Quicken Metamagic Rod, Minor";
+		else if (rollA < 95) ss << "Rod of Negation";
+		else if (rollA < 101) ss << "Rod of Steadfast Resolve";
+		else std::cout << "Error Code 4453\n";
 		break;
 	case 6:
+		if (rollA < 9) ss << "Rod of Absorption";
+		else if (rollA < 12) ss << "Rod of Flailing";
+		else if (rollA < 27) ss << "+3 Spell Level, " + mGen(3) + " Metamagic Rod, Normal";
+		else if (rollA < 29) ss << "Rod of Rulership";
+		else if (rollA < 31) ss << "Rod of Security";
+		else if (rollA < 33) ss << "Rod of Shadows";
+		else if (rollA < 35) ss << "Rod of Mind Mastery";
+		else if (rollA < 38) ss << "Rod of Lordly Might";
+		else if (rollA < 58) ss << "+2 Spell Level, " + mGen(2) + " Metamagic Rod, Greater";
+		else if (rollA < 59) ss << "Scepter of Heaven";
+		else if (rollA < 69) ss << "Quicken Metamagic Rod, Normal";
+		else if (rollA < 71) ss << "Rod of Dwarven Might";
+		else if (rollA < 76) ss << "Rod of Alertness";
+		else if (rollA < 96) ss << "+3 Spell Level, " + mGen(3) + " Metamagic Rod, Greater";
+		else if (rollA < 101) ss << "Quicken Metamagic Rod, Greater";
+		else std::cout << "Error Code 4471\n";
 		break;
 	default:
 		break;
@@ -4353,10 +4490,41 @@ std::string mGen(int subtype)
 	switch (subtype)
 	{
 	case 1:
+		if (rollA < 5) ss << "Bouncing";
+		else if (rollA < 10) ss << "Disruptive";
+		else if (rollA < 15) ss << "Ectoplasmic";
+		else if (rollA < 20) ss << "Elemental";
+		else if (rollA < 32) ss << "Enlarge";
+		else if (rollA < 44) ss << "Extend";
+		else if (rollA < 49) ss << "Flaring";
+		else if (rollA < 54) ss << "Focused";
+		else if (rollA < 59) ss << "Intensified";
+		else if (rollA < 64) ss << "Lingering";
+		else if (rollA < 69) ss << "Piercing";
+		else if (rollA < 74) ss << "Reach";
+		else if (rollA < 79) ss << "Rime";
+		else if (rollA < 84) ss << "Selective";
+		else if (rollA < 96) ss << "Silent";
+		else if (rollA < 101) ss << "Toppling";
+		else std::cout << "Error Code 4509\n";
 		break;
 	case 2:
+		if (rollA < 12) ss << "Burning";
+		else if (rollA < 23) ss << "Concussive";
+		else if (rollA < 41) ss << "Empower";
+		else if (rollA < 52) ss << "Persistent";
+		else if (rollA < 63) ss << "Sickening";
+		else if (rollA < 76) ss << "Thanatopic";
+		else if (rollA < 89) ss << "Threnodic";
+		else if (rollA < 101) ss << "Thundering";
+		else std::cout << "Error Code 4520\n";
 		break;
 	case 3:
+		if (rollA < 21) ss << "Dazing";
+		else if (rollA < 41) ss << Echoing"";
+		else if (rollA < 71) ss << "Maximize";
+		else if (rollA < 101) ss << "Widen";
+		else std::cout << "Error Code 4527\n";
 		break;
 	default:
 		break;
