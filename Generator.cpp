@@ -2362,7 +2362,7 @@ std::string aEn(int type, int subtype)
 			break;
 		}
 	else std::cout << "Error Code 2427\n";
-	ss << std::endl;
+	ss << " ";
 	return ss.str();
 }
 std::string aPrefix(int type, int subtype)
@@ -4990,8 +4990,12 @@ int genFirst(int type, double value)
 	std::cout << ss.str();
 
 	int repeat;
-	std::cout << "Again?\n1. Yes\n2. No\n";
-	std::cin >> repeat;
+	do
+	{
+		std::cout << "Again?\n1. Yes\n2. No\n3.Save these results for later (In Progress)";
+		std::cin >> repeat;
+		if (repeat == 3) toText(ss);
+	} while (repeat == 1 || repeat == 2);
 	return repeat;
 }
 int main()
@@ -5050,14 +5054,14 @@ int main()
 		{
 			std::cout << "What kind of treasure do you want to generate?\n";
 			std::cout << "1. Coins\n\tTreasure of this type consists entirely of coins\n";
-			std::cout << "2. Coins and Gems\n\tthis type also includes gemstones, some of which can be quite valuable\n";
-			std::cout << "3. Art Objects\n\t these items are valuable for their beauty and craftsmanship and are made with precious metals, gems, and other fine materials\n";
-			std::cout << "4. Coins and Small Objects\n\tcoins and small magic items, such as potions, rings, scrolls, and wands\n";
-			std::cout << "5. Armor and Weapons\n\tsolely weapons and armor\n";
-			std::cout << "6. Combatant Gear\n\tarmor, coins, potions, weapons, and wondrous items\n";
-			std::cout << "7. Spellcaster Gear\n\tcoins, potions, scrolls, staves, wands, and wondrous items\n";
-			std::cout << "8. Lair Treasure\n\ta large number of magic items, coins, and other valuables\n";
-			std::cout << "9. Treasure Hoard\n\tthis can contain virtually any type of item\n";
+			std::cout << "2. Coins and Gems\n\tThis type also includes gemstones, some of which can be quite valuable\n";
+			std::cout << "3. Art Objects\n\tThese items are valuable for their beauty and craftsmanship\n\t and are made with precious metals, gems, and other fine materials\n";
+			std::cout << "4. Coins and Small Objects\n\tCoins and small magic items, such as potions, rings, scrolls, and wands\n";
+			std::cout << "5. Armor and Weapons\n\tSolely weapons and armor\n";
+			std::cout << "6. Combatant Gear\n\tArmor, coins, potions, weapons, and wondrous items\n";
+			std::cout << "7. Spellcaster Gear\n\tCoins, potions, scrolls, staves, wands, and wondrous items\n";
+			std::cout << "8. Lair Treasure\n\tA large number of magic items, coins, and other valuables\n";
+			std::cout << "9. Treasure Hoard\n\tThis can contain virtually any type of item\n";
 			std::cin >> type;
 			system("cls");
 		} while (type > 9 || type < 1);
