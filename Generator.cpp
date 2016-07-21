@@ -50,7 +50,6 @@ std::string coinGen(int number, int dice, int type)
 		std::cout << "Error Code 112\n";
 		break;
 	}
-	ss << std::endl;
 	return ss.str();
 }
 std::string coinGen(int number, int dice, int type, int modifier)
@@ -85,74 +84,74 @@ std::string gemGen(int subtype)
 	{
 	case 1:
 		worth = roll(2, 4) + 5;
-		if (rollG < 9) ss << "Agate (" << worth << " gp)\n";
-		else if (rollG < 14) ss << "Alabaster (" << worth << " gp)\n";
-		else if (rollG < 21) ss << "Azurite (" << worth << " gp)\n";
-		else if (rollG < 27) ss << "Hematite (" << worth << " gp)\n";
-		else if (rollG < 35) ss << "Lapis Lazuli (" << worth << " gp)\n";
-		else if (rollG < 41) ss << "Malachite (" << worth << " gp)\n";
-		else if (rollG < 49) ss << "Obsidian (" << worth << " gp)\n";
-		else if (rollG < 57) ss << "Irrigular freshwater Pearl (" << worth << " gp)\n";
-		else if (rollG < 63) ss << "Pyrite (" << worth << " gp)\n";
-		else if (rollG < 71) ss << "Rhodochrosite (" << worth << " gp)\n";
-		else if (rollG < 79) ss << "Rock Crystal Quartz (" << worth << " gp)\n";
-		else if (rollG < 85) ss << "Shell (" << worth << " gp)\n";
-		else if (rollG < 93) ss << "Tigereye (" << worth << " gp)\n";
-		else if (rollG < 101) ss << "Turquoise (" << worth << " gp)\n";
+		if (rollG < 9) ss << "Agate (" << worth << " gp)";
+		else if (rollG < 14) ss << "Alabaster (" << worth << " gp)";
+		else if (rollG < 21) ss << "Azurite (" << worth << " gp)";
+		else if (rollG < 27) ss << "Hematite (" << worth << " gp)";
+		else if (rollG < 35) ss << "Lapis Lazuli (" << worth << " gp)";
+		else if (rollG < 41) ss << "Malachite (" << worth << " gp)";
+		else if (rollG < 49) ss << "Obsidian (" << worth << " gp)";
+		else if (rollG < 57) ss << "Irrigular freshwater Pearl (" << worth << " gp)";
+		else if (rollG < 63) ss << "Pyrite (" << worth << " gp)";
+		else if (rollG < 71) ss << "Rhodochrosite (" << worth << " gp)";
+		else if (rollG < 79) ss << "Rock Crystal Quartz (" << worth << " gp)";
+		else if (rollG < 85) ss << "Shell (" << worth << " gp)";
+		else if (rollG < 93) ss << "Tigereye (" << worth << " gp)";
+		else if (rollG < 101) ss << "Turquoise (" << worth << " gp)";
 		else std::cout << "Error Code 164\n";
 		break;
 	case 2:
 		worth = roll(2, 4, 5) + 25;
-		if (rollG < 7) ss << "Bloodstone (" << worth << " gp)\n";
-		else if (rollG < 13) ss << "Carnelian (" << worth << " gp)\n";
-		else if (rollG < 19) ss << "Chrysoprase (" << worth << " gp)\n";
-		else if (rollG < 25) ss << "Citrine  (" << worth << " gp)\n";
-		else if (rollG < 33) ss << "Ivory (" << worth << " gp)\n";
-		else if (rollG < 39) ss << "Jasper (" << worth << " gp)\n";
-		else if (rollG < 45) ss << "Moonstone (" << worth << " gp)\n";
-		else if (rollG < 51) ss << "Onyx (" << worth << " gp)\n";
-		else if (rollG < 57) ss << "Peridot (" << worth << " gp)\n";
-		else if (rollG < 75) ss << "Milky Quartz (" << worth << " gp)\n";
-		else if (rollG < 81) ss << "Sard (" << worth << " gp)\n";
-		else if (rollG < 87) ss << "Red Spinel (" << worth << " gp)\n";
-		else if (rollG < 101) ss << "Zircon (" << worth << " gp)\n";
+		if (rollG < 7) ss << "Bloodstone (" << worth << " gp)";
+		else if (rollG < 13) ss << "Carnelian (" << worth << " gp)";
+		else if (rollG < 19) ss << "Chrysoprase (" << worth << " gp)";
+		else if (rollG < 25) ss << "Citrine  (" << worth << " gp)";
+		else if (rollG < 33) ss << "Ivory (" << worth << " gp)";
+		else if (rollG < 39) ss << "Jasper (" << worth << " gp)";
+		else if (rollG < 45) ss << "Moonstone (" << worth << " gp)";
+		else if (rollG < 51) ss << "Onyx (" << worth << " gp)";
+		else if (rollG < 57) ss << "Peridot (" << worth << " gp)";
+		else if (rollG < 75) ss << "Milky Quartz (" << worth << " gp)";
+		else if (rollG < 81) ss << "Sard (" << worth << " gp)";
+		else if (rollG < 87) ss << "Red Spinel (" << worth << " gp)";
+		else if (rollG < 101) ss << "Zircon (" << worth << " gp)";
 		else std::cout << "Error Code 181\n";
 		break;
 	case 3:
 		worth = roll(2, 4, 10) + 50;
-		if (rollG < 11) ss << "Amber (" << worth << " gp)\n";
-		else if (rollG < 21) ss << "Amethyst (" << worth << " gp)\n";
-		else if (rollG < 31) ss << "Chyrsoberyl (" << worth << " gp)\n";
-		else if (rollG < 41) ss << "Coral (" << worth << " gp)\n";
-		else if (rollG < 51) ss << "Garnet (" << worth << " gp)\n";
-		else if (rollG < 61) ss << "Jade (" << worth << " gp)\n";
-		else if (rollG < 71) ss << "Jet (" << worth << " gp)\n";
-		else if (rollG < 81) ss << "Saltwater Pearl (" << worth << " gp)\n";
-		else if (rollG < 91) ss << "Deep Blue Spinel (" << worth << " gp)\n";
-		else if (rollG < 101) ss << "Tourmaline (" << worth << " gp)\n";
+		if (rollG < 11) ss << "Amber (" << worth << " gp)";
+		else if (rollG < 21) ss << "Amethyst (" << worth << " gp)";
+		else if (rollG < 31) ss << "Chyrsoberyl (" << worth << " gp)";
+		else if (rollG < 41) ss << "Coral (" << worth << " gp)";
+		else if (rollG < 51) ss << "Garnet (" << worth << " gp)";
+		else if (rollG < 61) ss << "Jade (" << worth << " gp)";
+		else if (rollG < 71) ss << "Jet (" << worth << " gp)";
+		else if (rollG < 81) ss << "Saltwater Pearl (" << worth << " gp)";
+		else if (rollG < 91) ss << "Deep Blue Spinel (" << worth << " gp)";
+		else if (rollG < 101) ss << "Tourmaline (" << worth << " gp)";
 		else std::cout << "Error Code 195\n";
 		break;
 	case 4:
 		worth = roll(2, 4, 50) + 250;
-		if (rollG < 26) ss << "Aquamarine (" << worth << " gp)\n";
-		else if (rollG < 51) ss << "Opal (" << worth << " gp)\n";
-		else if (rollG < 76) ss << "Black Pearl (" << worth << " gp)\n";
-		else if (rollG < 101) ss << "Topaz (" << worth << " gp)\n";
+		if (rollG < 26) ss << "Aquamarine (" << worth << " gp)";
+		else if (rollG < 51) ss << "Opal (" << worth << " gp)";
+		else if (rollG < 76) ss << "Black Pearl (" << worth << " gp)";
+		else if (rollG < 101) ss << "Topaz (" << worth << " gp)";
 		else std::cout << "Error Code 203\n";
 	case 5:
 		worth = roll(2, 4, 100) + 500;
-		if (rollG < 26) ss << "Small Diamond (" << worth << " gp)\n";
-		else if (rollG < 51) ss << "Emerald (" << worth << " gp)\n";
-		else if (rollG < 76) ss << "Small Ruby (" << worth << " gp)\n";
-		else if (rollG < 101) ss << "Sapphire (" << worth << " gp)\n";
+		if (rollG < 26) ss << "Small Diamond (" << worth << " gp)";
+		else if (rollG < 51) ss << "Emerald (" << worth << " gp)";
+		else if (rollG < 76) ss << "Small Ruby (" << worth << " gp)";
+		else if (rollG < 101) ss << "Sapphire (" << worth << " gp)";
 		else std::cout << "Error Code 210\n";
 		break;
 	case 6:
 		worth = roll(2, 4, 100) + 2500;
-		if (rollG < 26) ss << "Large Diamond (" << worth << " gp)\n";
-		else if (rollG < 51) ss << "Brilliant Green Emerald (" << worth << " gp)\n";
-		else if (rollG < 76) ss << "Large Ruby (" << worth << " gp)\n";
-		else if (rollG < 101) ss << "Star Sapphire (" << worth << " gp)\n";
+		if (rollG < 26) ss << "Large Diamond (" << worth << " gp)";
+		else if (rollG < 51) ss << "Brilliant Green Emerald (" << worth << " gp)";
+		else if (rollG < 76) ss << "Large Ruby (" << worth << " gp)";
+		else if (rollG < 101) ss << "Star Sapphire (" << worth << " gp)";
 		else std::cout << "Error Code 218\n";
 		break;
 	default:
@@ -1836,7 +1835,7 @@ std::string wandGen(int subtype)
 			else if (rollB < 98) ss << "Ventriloquism";
 			else if (rollB < 99) ss << "Magic Mouth";
 			else if (rollB < 100) ss << "Bless Water";
-			else if (rollB<101) ss << "Curse Water";
+			else if (rollB < 101) ss << "Curse Water";
 			else std::cout << "Error Code 1902\n";
 			break;
 		case 2:
@@ -2444,105 +2443,112 @@ std::string aPrefix(int type, int subtype)
 std::string armorGen(int subtype)
 {
 	std::stringstream ss;
-	int rollB = roll(1, 100), t;
+	int rollB, t;
 	std::string a, p;
-	
-	if (rollB < 5)
+
+	do
 	{
-		a = "Banded Mail";
-		t = 1;
-	}
-	else if (rollB < 12)
-	{
-		a = "Breastplate";
-		t = 1;
-	}
-	else if (rollB < 15)
-	{
-		a = "Buckler";
-		t = 2;
-	}
-	else if (rollB < 22)
-	{
-		a = "Chain Shirt";
-		t = 1;
-	}
-	else if (rollB < 28)
-	{
-		a = "Chainmail";
-		t = 1;
-	}
-	else if (rollB < 35)
-	{
-		a = "Full Plate";
-		t = 1;
-	}
-	else if (rollB < 40)
-	{
-		a = "Half-Plate";
-		t = 1;
-	}
-	else if (rollB < 46)
-	{
-		a = "Heavy Steel Shield";
-		t = 2;
-	}
-	else if (rollB < 52)
-	{
-		a = "Heavy Wooden Shield";
-		t = 2;
-	}
-	else if (rollB < 56)
-	{
-		a = "Hide Armor";
-		t = 1;
-	}
-	else if (rollB < 62)
-	{
-		a = "Leather Armor";
-		t = 1;
-	}
-	else if (rollB < 66)
-	{
-		a = "Light Steel Shield";
-		t = 2;
-	}
-	else if (rollB < 70)
-	{
-		a = "Light Wooden Shield";
-		t = 2;
-	}
-	else if (rollB < 73)
-	{
-		a = "Padded Armor";
-		t = 1;
-	}
-	else if (rollB < 78)
-	{
-		a = "Scale Mail";
-		t = 1;
-	}
-	else if (rollB < 82)
-	{
-		a = "Splint Mail";
-		t = 1;
-	}
-	else if (rollB < 88)
-	{
-		a = "Studded Leather Armor";
-		t = 1;
-	}
-	else if (rollB < 91)
-	{
-		a = "Tower Shield";
-		t = 2;
-	}
-	else if (rollB < 101) ss << armorGen(subtype);
-	else std::cout << "Error Code 2512\n";
-	
+		rollB = roll(1, 100);
+		if (rollB < 5)
+		{
+			a = "Banded Mail";
+			t = 1;
+		}
+		else if (rollB < 12)
+		{
+			a = "Breastplate";
+			t = 1;
+		}
+		else if (rollB < 15)
+		{
+			a = "Buckler";
+			t = 2;
+		}
+		else if (rollB < 22)
+		{
+			a = "Chain Shirt";
+			t = 1;
+		}
+		else if (rollB < 28)
+		{
+			a = "Chainmail";
+			t = 1;
+		}
+		else if (rollB < 35)
+		{
+			a = "Full Plate";
+			t = 1;
+		}
+		else if (rollB < 40)
+		{
+			a = "Half-Plate";
+			t = 1;
+		}
+		else if (rollB < 46)
+		{
+			a = "Heavy Steel Shield";
+			t = 2;
+		}
+		else if (rollB < 52)
+		{
+			a = "Heavy Wooden Shield";
+			t = 2;
+		}
+		else if (rollB < 56)
+		{
+			a = "Hide Armor";
+			t = 1;
+		}
+		else if (rollB < 62)
+		{
+			a = "Leather Armor";
+			t = 1;
+		}
+		else if (rollB < 66)
+		{
+			a = "Light Steel Shield";
+			t = 2;
+		}
+		else if (rollB < 70)
+		{
+			a = "Light Wooden Shield";
+			t = 2;
+		}
+		else if (rollB < 73)
+		{
+			a = "Padded Armor";
+			t = 1;
+		}
+		else if (rollB < 78)
+		{
+			a = "Scale Mail";
+			t = 1;
+		}
+		else if (rollB < 82)
+		{
+			a = "Splint Mail";
+			t = 1;
+		}
+		else if (rollB < 88)
+		{
+			a = "Studded Leather Armor";
+			t = 1;
+		}
+		else if (rollB < 91)
+		{
+			a = "Tower Shield";
+			t = 2;
+		}
+		else if (rollB < 101)
+		{
+
+		}
+		else std::cout << "Error Code 2512\n";
+	} while (rollB >= 91);
+
 	p = aPrefix(t, subtype);
-	if (p.at(0) == '+') ss << p + a;
-	else if (p.size() == 0) ss << "mwk " + a;
+	if (p.size() == 0) ss << "mwk " + a;
+	else if (p.at(0) == '+') ss << p + a;
 	else ss << p;
 	ss << std::endl;
 	return ss.str();
@@ -2780,7 +2786,7 @@ std::string wPrefix(int type, int subtype)
 		else if (rollA < 57) ss << "+2 " + wEn(type, 2);
 		else if (rollA < 69) ss << "+3 " + wEn(type, 1);
 		else if (rollA < 81) ss << "+4 " + wEn(type, 1);
-		else if (rollA < 101) ss << "Lesser Major specific weapon"; 
+		else if (rollA < 101) ss << "Lesser Major specific weapon";
 		else std::cout << "Error code 2929\n";
 		break;
 	case 6:
@@ -2808,204 +2814,207 @@ std::string wPrefix(int type, int subtype)
 std::string weaponGen(int subtype)
 {
 	std::stringstream ss;
-	int rollA = roll(1,100), rollB = roll(1, 100), t = 0;
+	int t = 0, rollB;
 	std::string w, p;
-	
-	if (rollB < 2)
+
+	do
 	{
-		w = "Bastard Sword";
-		t = 1;
-	}
-	else if (rollB < 6)
-	{
-		w = "Battleaxe";
-		t = 1;
-	}
-	else if (rollB < 7)
-	{
-		w = "Bolas";
-		t = 1;
-	}
-	else if (rollB < 9)
-	{
-		w = "Club";
-		t = 1;
-	}
-	else if (rollB < 11)
-	{
-		w = "Composite Longbow";
-		t = 2;
-	}
-	else if (rollB < 13)
-	{
-		w = "Composite Shortbow";
-		t = 2;
-	}
-	else if (rollB < 17)
-	{
-		w = "Dagger";
-		t = 1;
-	}
-	else if (rollB < 18)
-	{
-		w = "Dart";
-		t = 2;
-	}
-	else if (rollB < 19)
-	{
-		w = "Dwarven Waraxe";
-		t = 1;
-	}
-	else if (rollB < 20)
-	{
-		w = "Falchion";
-		t = 1;
-	}
-	else if (rollB < 21)
-	{
-		w = "Gauntlet";
-		t = 1;
-	}
-	else if (rollB < 22)
-	{
-		w = "Glaive";
-		t = 1;
-	}
-	else if (rollB < 25)
-	{
-		w = "Greataxe";
-		t = 1;
-	}
-	else if (rollB < 26)
-	{
-		w = "Greatclub";
-		t = 1;
-	}
-	else if (rollB < 29)
-	{
-		w = "Greatsword";
-		t = 1;
-	}
-	else if (rollB < 30)
-	{
-		w = "Halberd";
-		t = 1;
-	}
-	else if (rollB < 31)
-	{
-		w = "Handaxe";
-		t = 1;
-	}
-	else if (rollB < 34)
-	{
-		w = "Heavy Crossbow";
-		t = 1;
-	}
-	else if (rollB < 35)
-	{
-		w = "Heavy Flail";
-		t = 1;
-	}
-	else if (rollB < 36)
-	{
-		w = "Heavy Mace";
-		t = 1;
-	}
-	else if (rollB < 38)
-	{
-		w = "Lance";
-		t = 1;
-	}
-	else if (rollB < 41)
-	{
-		w = "Light Crossbow";
-		t = 2;
-	}
-	else if (rollB < 42)
-	{
-		w = "Light Flail";
-		t = 1;
-	}
-	else if (rollB < 43)
-	{
-		w = "Light Hammer";
-		t = 1;
-	}
-	else if (rollB < 45)
-	{
-		w = "Light Mace";
-		t = 1;
-	}
-	else if (rollB < 46)
-	{
-		w = "Light Pick";
-		t = 1;
-	}
-	else if (rollB < 50)
-	{
-		w = "Longbow";
-		t = 2;
-	}
-	else if (rollB < 52)
-	{
-		w = "Longspear";
-		t = 1;
-	}
-	else if (rollB < 59)
-	{
-		w = "Longsword";
-		t = 1;
-	}
-	else if (rollB < 61)
-	{
-		w = "Morningstar";
-		t = 1;
-	}
-	else if (rollB < 62)
-	{
-		w = "Nunchaku";
-		t = 1;
-	}
-	else if (rollB < 64)
-	{
-		w = "Quarterstaff";
-		t = 1;
-	}
-	else if (rollB < 85)
-	{
-		w = "Rapier";
-		t = 1;
-	}
-	else if (rollB < 88)
-	{
-		w = "Spear";
-		t = 1;
-	}
-	else if (rollB < 89)
-	{
-		w = "Trident";
-		t = 1;
-	}
-	else if (rollB < 92)
-	{
-		w = "Warhammer";
-		t = 1;
-	}
-	else if (rollB < 95)
-	{
-		w = "Whip";
-		t = 1;
-	}
-	else if (rollB < 101)
-	{
-		ss << weaponGen(subtype);
-	}
-	else
-		std::cout << "Error Code 3163\n";
-	
+		rollB = roll(1, 100);
+		if (rollB < 2)
+		{
+			w = "Bastard Sword";
+			t = 1;
+		}
+		else if (rollB < 6)
+		{
+			w = "Battleaxe";
+			t = 1;
+		}
+		else if (rollB < 7)
+		{
+			w = "Bolas";
+			t = 1;
+		}
+		else if (rollB < 9)
+		{
+			w = "Club";
+			t = 1;
+		}
+		else if (rollB < 11)
+		{
+			w = "Composite Longbow";
+			t = 2;
+		}
+		else if (rollB < 13)
+		{
+			w = "Composite Shortbow";
+			t = 2;
+		}
+		else if (rollB < 17)
+		{
+			w = "Dagger";
+			t = 1;
+		}
+		else if (rollB < 18)
+		{
+			w = "Dart";
+			t = 2;
+		}
+		else if (rollB < 19)
+		{
+			w = "Dwarven Waraxe";
+			t = 1;
+		}
+		else if (rollB < 20)
+		{
+			w = "Falchion";
+			t = 1;
+		}
+		else if (rollB < 21)
+		{
+			w = "Gauntlet";
+			t = 1;
+		}
+		else if (rollB < 22)
+		{
+			w = "Glaive";
+			t = 1;
+		}
+		else if (rollB < 25)
+		{
+			w = "Greataxe";
+			t = 1;
+		}
+		else if (rollB < 26)
+		{
+			w = "Greatclub";
+			t = 1;
+		}
+		else if (rollB < 29)
+		{
+			w = "Greatsword";
+			t = 1;
+		}
+		else if (rollB < 30)
+		{
+			w = "Halberd";
+			t = 1;
+		}
+		else if (rollB < 31)
+		{
+			w = "Handaxe";
+			t = 1;
+		}
+		else if (rollB < 34)
+		{
+			w = "Heavy Crossbow";
+			t = 1;
+		}
+		else if (rollB < 35)
+		{
+			w = "Heavy Flail";
+			t = 1;
+		}
+		else if (rollB < 36)
+		{
+			w = "Heavy Mace";
+			t = 1;
+		}
+		else if (rollB < 38)
+		{
+			w = "Lance";
+			t = 1;
+		}
+		else if (rollB < 41)
+		{
+			w = "Light Crossbow";
+			t = 2;
+		}
+		else if (rollB < 42)
+		{
+			w = "Light Flail";
+			t = 1;
+		}
+		else if (rollB < 43)
+		{
+			w = "Light Hammer";
+			t = 1;
+		}
+		else if (rollB < 45)
+		{
+			w = "Light Mace";
+			t = 1;
+		}
+		else if (rollB < 46)
+		{
+			w = "Light Pick";
+			t = 1;
+		}
+		else if (rollB < 50)
+		{
+			w = "Longbow";
+			t = 2;
+		}
+		else if (rollB < 52)
+		{
+			w = "Longspear";
+			t = 1;
+		}
+		else if (rollB < 59)
+		{
+			w = "Longsword";
+			t = 1;
+		}
+		else if (rollB < 61)
+		{
+			w = "Morningstar";
+			t = 1;
+		}
+		else if (rollB < 62)
+		{
+			w = "Nunchaku";
+			t = 1;
+		}
+		else if (rollB < 64)
+		{
+			w = "Quarterstaff";
+			t = 1;
+		}
+		else if (rollB < 85)
+		{
+			w = "Rapier";
+			t = 1;
+		}
+		else if (rollB < 88)
+		{
+			w = "Spear";
+			t = 1;
+		}
+		else if (rollB < 89)
+		{
+			w = "Trident";
+			t = 1;
+		}
+		else if (rollB < 92)
+		{
+			w = "Warhammer";
+			t = 1;
+		}
+		else if (rollB < 95)
+		{
+			w = "Whip";
+			t = 1;
+		}
+		else if (rollB < 101)
+		{
+		}
+		else
+			std::cout << "Error Code 3163\n";
+	} while (rollB >= 95);
+
 	p = wPrefix(t, subtype);
-	if (p.at(0) == '+') ss << p + w;
-	else if (p.size() == 0) ss << "mwk " + w;
+	if (p.size() == 0) ss << "mwk " + w;
+	else if (p.at(0) == '+') ss << p + w;
 	else ss << p;
 	ss << std::endl;
 	return ss.str();
@@ -3145,7 +3154,7 @@ std::string wGen(int subtype)
 {
 	int rollG = roll(1, 100), rollA = roll(1, 100);
 	std::stringstream ss;
-	if(rollG<7) // Belts
+	if (rollG < 7) // Belts
 		switch (subtype)
 		{
 		case 1:
@@ -3218,7 +3227,7 @@ std::string wGen(int subtype)
 			std::cout << "Error Code 3280\n";
 			break;
 		}
-	else if(rollG<13) // Body
+	else if (rollG < 13) // Body
 		switch (subtype)
 		{
 		case 1:
@@ -3278,7 +3287,7 @@ std::string wGen(int subtype)
 			std::cout << "Error Code 3340\n";
 			break;
 		}
-	else if (rollG<18) // Chest
+	else if (rollG < 18) // Chest
 		switch (subtype)
 		{
 		case 1:
@@ -3331,7 +3340,7 @@ std::string wGen(int subtype)
 			std::cout << "Error Code 3393\n";
 			break;
 		}
-	else if (rollG<23) // Eyes
+	else if (rollG < 23) // Eyes
 		switch (subtype)
 		{
 		case 1:
@@ -3387,7 +3396,7 @@ std::string wGen(int subtype)
 			std::cout << "Error Code 3449\n";
 			break;
 		}
-	else if (rollG<29) // Feet
+	else if (rollG < 29) // Feet
 		switch (subtype)
 		{
 		case 1:
@@ -3396,7 +3405,7 @@ std::string wGen(int subtype)
 			else if (rollA < 32) ss << "Boots of the Enduring March";
 			else if (rollA < 42) ss << "Feather Step Slippers";
 			else if (rollA < 51) ss << "Boots of Friendly Terrain";
-			else if (rollA < 61) ss << "Boots of the Winterlands"; 
+			else if (rollA < 61) ss << "Boots of the Winterlands";
 			else if (rollA < 77) ss << "Boots of Elvenkind";
 			else if (rollA < 86) ss << "Acrobat Slippers";
 			else if (rollA < 93) ss << "Horseshoes of Speed";
@@ -3456,7 +3465,7 @@ std::string wGen(int subtype)
 			std::cout << "Error Code 3518\n";
 			break;
 		}
-	else if (rollG<25) // Hands
+	else if (rollG < 25) // Hands
 		switch (subtype)
 		{
 		case 1:
@@ -3516,7 +3525,7 @@ std::string wGen(int subtype)
 			std::cout << "Error Code 3578\n";
 			break;
 		}
-	else if (rollG<42) // Head
+	else if (rollG < 42) // Head
 		switch (subtype)
 		{
 		case 1:
@@ -3588,7 +3597,7 @@ std::string wGen(int subtype)
 			std::cout << "Error Code 3650";
 			break;
 		}
-	else if (rollG<48) // Headband
+	else if (rollG < 48) // Headband
 		switch (subtype)
 		{
 		case 1:
@@ -3659,7 +3668,7 @@ std::string wGen(int subtype)
 			std::cout << "Error Code 3721\n";
 			break;
 		}
-	else if (rollG<55) // Neck
+	else if (rollG < 55) // Neck
 		switch (subtype)
 		{
 		case 1:
@@ -3748,7 +3757,7 @@ std::string wGen(int subtype)
 			std::cout << "Error Code 3810\n";
 			break;
 		}
-	else if (rollG<62) // Shoulders
+	else if (rollG < 62) // Shoulders
 		switch (subtype)
 		{
 		case 1:
@@ -3828,7 +3837,7 @@ std::string wGen(int subtype)
 			std::cout << "Error Code 3890\n";
 			break;
 		}
-	else if (rollG<68) // Wrists
+	else if (rollG < 68) // Wrists
 		switch (subtype)
 		{
 		case 1:
@@ -4324,8 +4333,8 @@ std::string staffGen(int subtype)
 		else std::cout << "Error Code 4323\n";
 		break;
 	case 5:
-		if (rollA < 05) ss << "Staff of Acid";
-		else if (rollA < 09) ss << "Staff of Shrieking";
+		if (rollA < 5) ss << "Staff of Acid";
+		else if (rollA < 9) ss << "Staff of Shrieking";
 		else if (rollA < 12) ss << "Chaotic Staff";
 		else if (rollA < 15) ss << "Holy Staff";
 		else if (rollA < 18) ss << "Lawful Staff";
@@ -4358,7 +4367,7 @@ std::string staffGen(int subtype)
 		else if (rollA < 11) ss << "Staff of Heaven and Earth";
 		else if (rollA < 14) ss << "Staff of Travel";
 		else if (rollA < 17) ss << "Staff of Hoarding";
-		else if (rollA < 20) ss << "Staff of Traps;
+		else if (rollA < 20) ss << "Staff of Traps";
 		else if (rollA < 23) ss << "Staff of Many Rays";
 		else if (rollA < 26) ss << "Staff of Mithral Might";
 		else if (rollA < 30) ss << "Staff of Defense";
@@ -4368,7 +4377,7 @@ std::string staffGen(int subtype)
 		else if (rollA < 42) ss << "Staff of Slumber";
 		else if (rollA < 47) ss << "Staff of Abjuration";
 		else if (rollA < 52) ss << "Staff of Conjuration";
-		else if (rollA < 57) ss << "Staff of Divination;
+		else if (rollA < 57) ss << "Staff of Divination";
 		else if (rollA < 62) ss << "Staff of Enchantment";
 		else if (rollA < 67) ss << "Staff of Evocation";
 		else if (rollA < 72) ss << "Staff of Illusion";
@@ -4396,6 +4405,62 @@ std::string staffGen(int multiple, int subtype)
 	std::stringstream ss;
 	for (int i = 0; i < multiple; i++)
 		ss << staffGen(subtype);
+	return ss.str();
+}
+std::string mGen(int subtype)
+{
+	int rollA = roll(1, 100);
+	std::stringstream ss;
+	switch (subtype)
+	{
+	case 1:
+		if (rollA < 5) ss << "Bouncing";
+		else if (rollA < 10) ss << "Disruptive";
+		else if (rollA < 15) ss << "Ectoplasmic";
+		else if (rollA < 20) ss << "Elemental";
+		else if (rollA < 32) ss << "Enlarge";
+		else if (rollA < 44) ss << "Extend";
+		else if (rollA < 49) ss << "Flaring";
+		else if (rollA < 54) ss << "Focused";
+		else if (rollA < 59) ss << "Intensified";
+		else if (rollA < 64) ss << "Lingering";
+		else if (rollA < 69) ss << "Piercing";
+		else if (rollA < 74) ss << "Reach";
+		else if (rollA < 79) ss << "Rime";
+		else if (rollA < 84) ss << "Selective";
+		else if (rollA < 96) ss << "Silent";
+		else if (rollA < 101) ss << "Toppling";
+		else std::cout << "Error Code 4509\n";
+		break;
+	case 2:
+		if (rollA < 12) ss << "Burning";
+		else if (rollA < 23) ss << "Concussive";
+		else if (rollA < 41) ss << "Empower";
+		else if (rollA < 52) ss << "Persistent";
+		else if (rollA < 63) ss << "Sickening";
+		else if (rollA < 76) ss << "Thanatopic";
+		else if (rollA < 89) ss << "Threnodic";
+		else if (rollA < 101) ss << "Thundering";
+		else std::cout << "Error Code 4520\n";
+		break;
+	case 3:
+		if (rollA < 21) ss << "Dazing";
+		else if (rollA < 41) ss << "Echoing";
+		else if (rollA < 71) ss << "Maximize";
+		else if (rollA < 101) ss << "Widen";
+		else std::cout << "Error Code 4527\n";
+		break;
+	default:
+		break;
+	}
+	ss << std::endl;
+	return ss.str();
+}
+std::string mGen(int multiple, int subtype)
+{
+	std::stringstream ss;
+	for (int i = 0; i < multiple; i++)
+		ss << mGen(subtype);
 	return ss.str();
 }
 std::string rodGen(int subtype)
@@ -4484,62 +4549,6 @@ std::string rodGen(int multiple, int subtype)
 		ss << rodGen(subtype);
 	return ss.str();
 }
-std::string mGen(int subtype)
-{
-	int rollA = roll(1, 100);
-	std::stringstream ss;
-	switch (subtype)
-	{
-	case 1:
-		if (rollA < 5) ss << "Bouncing";
-		else if (rollA < 10) ss << "Disruptive";
-		else if (rollA < 15) ss << "Ectoplasmic";
-		else if (rollA < 20) ss << "Elemental";
-		else if (rollA < 32) ss << "Enlarge";
-		else if (rollA < 44) ss << "Extend";
-		else if (rollA < 49) ss << "Flaring";
-		else if (rollA < 54) ss << "Focused";
-		else if (rollA < 59) ss << "Intensified";
-		else if (rollA < 64) ss << "Lingering";
-		else if (rollA < 69) ss << "Piercing";
-		else if (rollA < 74) ss << "Reach";
-		else if (rollA < 79) ss << "Rime";
-		else if (rollA < 84) ss << "Selective";
-		else if (rollA < 96) ss << "Silent";
-		else if (rollA < 101) ss << "Toppling";
-		else std::cout << "Error Code 4509\n";
-		break;
-	case 2:
-		if (rollA < 12) ss << "Burning";
-		else if (rollA < 23) ss << "Concussive";
-		else if (rollA < 41) ss << "Empower";
-		else if (rollA < 52) ss << "Persistent";
-		else if (rollA < 63) ss << "Sickening";
-		else if (rollA < 76) ss << "Thanatopic";
-		else if (rollA < 89) ss << "Threnodic";
-		else if (rollA < 101) ss << "Thundering";
-		else std::cout << "Error Code 4520\n";
-		break;
-	case 3:
-		if (rollA < 21) ss << "Dazing";
-		else if (rollA < 41) ss << Echoing"";
-		else if (rollA < 71) ss << "Maximize";
-		else if (rollA < 101) ss << "Widen";
-		else std::cout << "Error Code 4527\n";
-		break;
-	default:
-		break;
-	}
-	ss << std::endl;
-	return ss.str();
-}
-std::string mGen(int multiple, int subtype)
-{
-	std::stringstream ss;
-	for (int i = 0; i < multiple; i++)
-		ss << mGen(subtype);
-	return ss.str();
-}
 
 int genFirst(int type, double value)
 {
@@ -4560,29 +4569,29 @@ int genFirst(int type, double value)
 		{
 		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
 			break;
-		case 0: ss << coinGen(5, 10, 1) << coinGen(3, 4, 2);
+		case 0: ss << coinGen(5, 10, 1) << std::endl << coinGen(3, 4, 2) << std::endl;
 			break;
-		case 1: ss << coinGen(2, 6, 1, 10) << coinGen(4, 8, 2) << coinGen(1, 4, 3);
+		case 1: ss << coinGen(2, 6, 1, 10) << std::endl << coinGen(4, 8, 2) << std::endl << coinGen(1, 4, 3) << std::endl;
 			break;
-		case 2: ss << coinGen(5, 10, 1, 10) << coinGen(5, 10, 2) << coinGen(1, 8, 3);
+		case 2: ss << coinGen(5, 10, 1, 10) << std::endl << coinGen(5, 10, 2) << std::endl << coinGen(1, 8, 3) << std::endl;
 			break;
-		case 3: ss << coinGen(2, 4, 1, 100) << coinGen(3, 6, 2, 10) << coinGen(4, 4, 3);
+		case 3: ss << coinGen(2, 4, 1, 100) << std::endl << coinGen(3, 6, 2, 10) << std::endl << coinGen(4, 4, 3) << std::endl;
 			break;
-		case 4: ss << coinGen(4, 4, 1, 100) << coinGen(4, 6, 2, 10) << coinGen(8, 6, 3);
+		case 4: ss << coinGen(4, 4, 1, 100) << std::endl << coinGen(4, 6, 2, 10) << std::endl << coinGen(8, 6, 3) << std::endl;
 			break;
-		case 5: ss << coinGen(6, 8, 2, 10) << coinGen(3, 4, 3, 10);
+		case 5: ss << coinGen(6, 8, 2, 10) << std::endl << coinGen(3, 4, 3, 10) << std::endl;
 			break;
-		case 6: ss << coinGen(2, 4, 2, 100) << coinGen(4, 4, 3, 10) << coinGen(2, 4, 4);
+		case 6: ss << coinGen(2, 4, 2, 100) << std::endl << coinGen(4, 4, 3, 10) << std::endl << coinGen(2, 4, 4) << std::endl;
 			break;
-		case 7: ss << coinGen(6, 6, 3, 10) << coinGen(8, 6, 4);
+		case 7: ss << coinGen(6, 6, 3, 10) << std::endl << coinGen(8, 6, 4) << std::endl;
 			break;
-		case 8: ss << coinGen(2, 4, 3, 100) << coinGen(10, 10, 4);
+		case 8: ss << coinGen(2, 4, 3, 100) << std::endl << coinGen(10, 10, 4) << std::endl;
 			break;
-		case 9: ss << coinGen(4, 8, 3, 100) << coinGen(6, 10, 4, 10);
+		case 9: ss << coinGen(4, 8, 3, 100) << std::endl << coinGen(6, 10, 4, 10) << std::endl;
 			break;
-		case 10: ss << coinGen(2, 4, 3, 1000) << coinGen(12, 8, 4, 10);
+		case 10: ss << coinGen(2, 4, 3, 1000) << std::endl << coinGen(12, 8, 4, 10) << std::endl;
 			break;
-		case 11: ss << coinGen(2, 6, 3, 1000) << coinGen(8, 10, 4, 100);
+		case 11: ss << coinGen(2, 6, 3, 1000) << std::endl << coinGen(8, 10, 4, 100) << std::endl;
 			break;
 		default: std::cout << "Error Code 3228\n";
 			break;
@@ -4592,81 +4601,81 @@ int genFirst(int type, double value)
 		{
 		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
 			break;
-		case 0: ss << gemGen(1);
+		case 0: ss << gemGen(1) << std::endl;
 			break;
-		case 1: ss << coinGen(2, 6, 1, 10) << coinGen(4, 8, 2) << coinGen(1, 4, 3) << gemGen(1);
+		case 1: ss << coinGen(2, 6, 1, 10) << std::endl << coinGen(4, 8, 2) << std::endl << coinGen(1, 4, 3) << std::endl << gemGen(1) << std::endl;
 			break;
-		case 2: ss << coinGen(5, 10, 2) << coinGen(1, 4, 3) << gemGen(2, 1);
+		case 2: ss << coinGen(5, 10, 2) << std::endl << coinGen(1, 4, 3) << std::endl << gemGen(2, 1) << std::endl;
 			break;
-		case 3: ss << coinGen(3, 6, 2, 10) << coinGen(3, 6, 3) << gemGen(3, 1);
+		case 3: ss << coinGen(3, 6, 2, 10) << std::endl << coinGen(3, 6, 3) << std::endl << gemGen(3, 1) << std::endl;
 			break;
-		case 4: ss << coinGen(1, 4, 2, 10) << coinGen(1, 4, 3) << gemGen(2, 1) << gemGen(2);
+		case 4: ss << coinGen(1, 4, 2, 10) << std::endl << coinGen(1, 4, 3) << std::endl << gemGen(2, 1) << std::endl << gemGen(2) << std::endl;
 			break;
-		case 5: ss << coinGen(3, 8, 2, 10) << coinGen(4, 8, 3) << gemGen(2, 1) << gemGen(2);
+		case 5: ss << coinGen(3, 8, 2, 10) << std::endl << coinGen(4, 8, 3) << std::endl << gemGen(2, 1) << std::endl << gemGen(2) << std::endl;
 			break;
-		case 6: ss << gemGen(2) << gemGen(3);
+		case 6: ss << gemGen(2) << std::endl << gemGen(3) << std::endl;
 			break;
-		case 7: ss << coinGen(3, 6, 2, 10) << coinGen(2, 4, 3, 10) << gemGen(4, 1) << gemGen(3);
+		case 7: ss << coinGen(3, 6, 2, 10) << std::endl << coinGen(2, 4, 3, 10) << std::endl << gemGen(4, 1) << std::endl << gemGen(3) << std::endl;
 			break;
-		case 8: ss << coinGen(2, 4, 3, 10) << gemGen(2, 2) << gemGen(3);
+		case 8: ss << coinGen(2, 4, 3, 10) << std::endl << gemGen(2, 2) << std::endl << gemGen(3) << std::endl;
 			break;
-		case 9: ss << coinGen(2, 4, 3, 10) << coinGen(2, 4, 4) << gemGen(2, 2) << gemGen(3, 3);
+		case 9: ss << coinGen(2, 4, 3, 10) << std::endl << coinGen(2, 4, 4) << std::endl << gemGen(2, 2) << std::endl << gemGen(3, 3) << std::endl;
 			break;
-		case 10: ss << coinGen(2, 4, 3, 10) << gemGen(2, 2) << gemGen(3) << gemGen(4);
+		case 10: ss << coinGen(2, 4, 3, 10) << std::endl << gemGen(2, 2) << std::endl << gemGen(3) << std::endl << gemGen(4) << std::endl;
 			break;
-		case 11: ss << coinGen(3, 6, 3, 10) << coinGen(4, 4, 4) << gemGen(3, 3) << gemGen(4);
+		case 11: ss << coinGen(3, 6, 3, 10) << std::endl << coinGen(4, 4, 4) << std::endl << gemGen(3, 3) << std::endl << gemGen(4) << std::endl;
 			break;
-		case 12: ss << coinGen(2, 4, 3, 100) << gemGen(2, 4) << gemGen(5);
+		case 12: ss << coinGen(2, 4, 3, 100) << std::endl << gemGen(2, 4) << std::endl << gemGen(5) << std::endl;
 			break;
-		case 13: ss << coinGen(2, 4, 3, 100) << coinGen(2, 4, 4, 10) << gemGen(2, 4) << gemGen(3, 5);
+		case 13: ss << coinGen(2, 4, 3, 100) << std::endl << coinGen(2, 4, 4, 10) << std::endl << gemGen(2, 4) << std::endl << gemGen(3, 5) << std::endl;
 			break;
-		case 14: ss << gemGen(5, 5) << gemGen(6);
+		case 14: ss << gemGen(5, 5) << std::endl << gemGen(6) << std::endl;
 			break;
-		case 15: ss << coinGen(4, 8, 3, 100) << coinGen(6, 10, 4, 10) << gemGen(3, 6);
+		case 15: ss << coinGen(4, 8, 3, 100) << std::endl << coinGen(6, 10, 4, 10) << std::endl << gemGen(3, 6) << std::endl;
 			break;
-		case 16: ss << coinGen(4, 4, 4, 10) << gemGen(10, 3) << gemGen(4, 4) << gemGen(6, 5) << gemGen(8, 6);
+		case 16: ss << coinGen(4, 4, 4, 10) << std::endl << gemGen(10, 3) << std::endl << gemGen(4, 4) << std::endl << gemGen(6, 5) << std::endl << gemGen(8, 6) << std::endl;
 			break;
 		default: std::cout << "Error Code 3284\n";
 			break;
-			}
+		}
 	else if (type == 3)
 		switch (lootValue(types[2], value))
 		{
 		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
 			break;
-		case 0: ss << artGen(1);
+		case 0: ss << artGen(1) << std::endl;
 			break;
-		case 1: ss << artGen(2, 1);
+		case 1: ss << artGen(2, 1) << std::endl;
 			break;
-		case 2: ss << artGen(1) << artGen(2);
+		case 2: ss << artGen(1) << std::endl << artGen(2) << std::endl;
 			break;
-		case 3: ss << artGen(2);
+		case 3: ss << artGen(2) << std::endl;
 			break;
-		case 4: ss << artGen(3, 1) << artGen(2);
+		case 4: ss << artGen(3, 1) << std::endl << artGen(2) << std::endl;
 			break;
-		case 5: ss << artGen(4, 1) << artGen(3, 2);
+		case 5: ss << artGen(4, 1) << std::endl << artGen(3, 2) << std::endl;
 			break;
-		case 6: ss << artGen(3, 1) << artGen(2, 2) << artGen(3);
+		case 6: ss << artGen(3, 1) << std::endl << artGen(2, 2) << std::endl << artGen(3) << std::endl;
 			break;
-		case 7: ss << artGen(2, 3);
+		case 7: ss << artGen(2, 3) << std::endl;
 			break;
-		case 8: ss << artGen(3) << artGen(4);
+		case 8: ss << artGen(3) << std::endl << artGen(4) << std::endl;
 			break;
-		case 9: ss << artGen(2, 4);
+		case 9: ss << artGen(2, 4) << std::endl;
 			break;
-		case 10: ss << artGen(5, 2) << artGen(2, 3) << artGen(4);
+		case 10: ss << artGen(5, 2) << std::endl << artGen(2, 3) << std::endl << artGen(4) << std::endl;
 			break;
-		case 11: ss << artGen(4, 3) << artGen(2, 4) << artGen(5);
+		case 11: ss << artGen(4, 3) << std::endl << artGen(2, 4) << std::endl << artGen(5) << std::endl;
 			break;
-		case 12: ss << artGen(3) << artGen(2, 4) << artGen(5);
+		case 12: ss << artGen(3) << std::endl << artGen(2, 4) << std::endl << artGen(5) << std::endl;
 			break;
-		case 13: ss << artGen(5, 4) << artGen(5);
+		case 13: ss << artGen(5, 4) << std::endl << artGen(5) << std::endl;
 			break;
-		case 14: ss << artGen(5) << artGen(6);
+		case 14: ss << artGen(5) << std::endl << artGen(6) << std::endl;
 			break;
-		case 15: ss << artGen(2, 5) << artGen(6);
+		case 15: ss << artGen(2, 5) << std::endl << artGen(6) << std::endl;
 			break;
-		case 16: ss << artGen(10, 3) << artGen(5, 4) << artGen(4, 5) << artGen(2, 6);
+		case 16: ss << artGen(10, 3) << std::endl << artGen(5, 4) << std::endl << artGen(4, 5) << std::endl << artGen(2, 6) << std::endl;
 			break;
 		default: std::cout << "Error Code 3342";
 			break;
@@ -4676,51 +4685,51 @@ int genFirst(int type, double value)
 		{
 		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
 			break;
-		case 0: ss << coinGen(3, 6, 2, 10) + coinGen(4, 4, 3) + scrollGen(1);
+		case 0: ss << coinGen(3, 6, 2, 10) + "\n" + coinGen(4, 4, 3) + "\n" + scrollGen(1) + "\n";
 			break;
-		case 1: ss << coinGen(4, 6, 2, 10) + coinGen(3, 10, 3) + scrollGen(1) + potGen(1);
+		case 1: ss << coinGen(4, 6, 2, 10) + "\n" + coinGen(3, 10, 3) + "\n" + scrollGen(1) + "\n" + potGen(1) + "\n";
 			break;
-		case 2: ss << coinGen(2, 4, 2, 10) + coinGen(6, 6, 3) + scrollGen(2);
+		case 2: ss << coinGen(2, 4, 2, 10) + "\n" + coinGen(6, 6, 3) + "\n" + scrollGen(2) + "\n";
 			break;
-		case 3: ss << coinGen(2, 4, 2, 10) + coinGen(4, 6, 3) + potGen(2) + scrollGen(1);
+		case 3: ss << coinGen(2, 4, 2, 10) + "\n" + coinGen(4, 6, 3) + "\n" + potGen(2) + "\n" + scrollGen(1) + "\n";
 			break;
-		case 4: ss << coinGen(3, 6, 2, 10) + coinGen(3, 6, 3) + coinGen(1, 4, 4) + potGen(2, 1) + scrollGen(2);
+		case 4: ss << coinGen(3, 6, 2, 10) + "\n" + coinGen(3, 6, 3) + "\n" + coinGen(1, 4, 4) + "\n" + potGen(2, 1) + "\n" + scrollGen(2) + "\n";
 			break;
-		case 5: ss << coinGen(2, 4, 2, 10) + coinGen(6, 6, 3) + potGen(2) + scrollGen(2);
+		case 5: ss << coinGen(2, 4, 2, 10) + "\n" + coinGen(6, 6, 3) + "\n" + potGen(2) + "\n" + scrollGen(2) + "\n";
 			break;
-		case 6: ss << potGen(2) + scrollGen(2, 2);
+		case 6: ss << potGen(2) + "\n" + scrollGen(2, 2) + "\n";
 			break;
-		case 7: ss << coinGen(2, 4, 3, 10) + coinGen(1, 4, 4) + potGen(2, 2) + scrollGen(2);
+		case 7: ss << coinGen(2, 4, 3, 10) + "\n" + coinGen(1, 4, 4) + "\n" + potGen(2, 2) + "\n" + scrollGen(2) + "\n";
 			break;
-		case 8: ss << coinGen(7, 6, 3) + scrollGen(2) + wandGen(1);
+		case 8: ss << coinGen(7, 6, 3) + "\n" + scrollGen(2) + "\n" + wandGen(1) + "\n";
 			break;
-		case 9: ss << coinGen(2, 4, 3, 10) + coinGen(2, 4, 4) + potGen(3) + wandGen(1);
+		case 9: ss << coinGen(2, 4, 3, 10) + "\n" + coinGen(2, 4, 4) + "\n" + potGen(3) + "\n" + wandGen(1) + "\n";
 			break;
-		case 10: ss << coinGen(4, 4, 3, 10) + coinGen(3, 6, 4) + potGen(4) + scrollGen(4);
+		case 10: ss << coinGen(4, 4, 3, 10) + "\n" + coinGen(3, 6, 4) + "\n" + potGen(4) + "\n" + scrollGen(4) + "\n";
 			break;
-		case 11: ss << coinGen(2, 4, 3, 10) + coinGen(2, 4, 4) + potGen(3) + scrollGen(2, 4);
+		case 11: ss << coinGen(2, 4, 3, 10) + "\n" + coinGen(2, 4, 4) + "\n" + potGen(3) + "\n" + scrollGen(2, 4) + "\n";
 			break;
-		case 12: ss << coinGen(3, 6, 3, 10) + coinGen(4, 4, 4) + potGen(4) + scrollGen(4) + wandGen(2);
+		case 12: ss << coinGen(3, 6, 3, 10) + "\n" + coinGen(4, 4, 4) + "\n" + potGen(4) + "\n" + scrollGen(4) + "\n" + wandGen(2) + "\n";
 			break;
-		case 13: ss << coinGen(3, 6, 3, 10) + coinGen(4, 4, 4) + scrollGen(4) + wandGen(2, 2);
+		case 13: ss << coinGen(3, 6, 3, 10) + "\n" + coinGen(4, 4, 4) + "\n" + scrollGen(4) + "\n" + wandGen(2, 2) + "\n";
 			break;
-		case 14: ss << coinGen(2, 4, 3, 10) + coinGen(2, 4, 4) + potGen(3, 3) + scrollGen(2, 4) + wandGen(2);
+		case 14: ss << coinGen(2, 4, 3, 10) + "\n" + coinGen(2, 4, 4) + "\n" + potGen(3, 3) + "\n" + scrollGen(2, 4) + "\n" + wandGen(2) + "\n";
 			break;
-		case 15: ss << coinGen(5, 6, 4) + potGen(2, 6) + scrollGen(2, 6);
+		case 15: ss << coinGen(5, 6, 4) + "\n" + potGen(2, 6) + "\n" + scrollGen(2, 6) + "\n";
 			break;
-		case 16: ss << coinGen(4, 6, 4) + potGen(6) + scrollGen(6) + wandGen(3);
+		case 16: ss << coinGen(4, 6, 4) + "\n" + potGen(6) + "\n" + scrollGen(6) + "\n" + wandGen(3) + "\n";
 			break;
-		case 17: ss << coinGen(9, 10, 4) + potGen(3, 6) + scrollGen(2, 5) + wandGen(4);
+		case 17: ss << coinGen(9, 10, 4) + "\n" + potGen(3, 6) + "\n" + scrollGen(2, 5) + "\n" + wandGen(4) + "\n";
 			break;
-		case 18: ss << coinGen(6, 6, 3, 10) + potGen(3, 5) + wandGen(6);
+		case 18: ss << coinGen(6, 6, 3, 10) + "\n" + potGen(3, 5) + "\n" + wandGen(6) + "\n";
 			break;
-		case 19: ss << scrollGen(5, 6) + wandGen(4);
+		case 19: ss << scrollGen(5, 6) + "\n" + wandGen(4) + "\n";
 			break;
-		case 20: ss << coinGen(6, 6, 4) + potGen(4, 6) + scrollGen(3, 6) + wandGen(6);
+		case 20: ss << coinGen(6, 6, 4) + "\n" + potGen(4, 6) + "\n" + scrollGen(3, 6) + "\n" + wandGen(6) + "\n";
 			break;
-		case 21: ss << coinGen(6, 6, 4) + potGen(4, 6) + scrollGen(3, 6) + wandGen(6);
+		case 21: ss << coinGen(6, 6, 4) + "\n" + potGen(4, 6) + "\n" + scrollGen(3, 6) + "\n" + wandGen(6) + "\n";
 			break;
-		case 22: ss << coinGen(8, 4, 4, 10) + scrollGen(4, 6) + wandGen(2, 6);
+		case 22: ss << coinGen(8, 4, 4, 10) + "\n" + scrollGen(4, 6) + "\n" + wandGen(2, 6) + "\n";
 			break;
 		default: std::cout << "Error Code 3418\n";
 			break;
@@ -4730,53 +4739,53 @@ int genFirst(int type, double value)
 		{
 		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
 			break;
-		case 1: ss << armorGen(0);
+		case 1: ss << armorGen(0) + "\n";
 			break;
-		case 2: ss << armorGen(0);
+		case 2: ss << armorGen(0) + "\n";
 			break;
-		case 3: ss << weaponGen(0);
+		case 3: ss << weaponGen(0) + "\n";
 			break;
-		case 4: ss << armorGen(0);
+		case 4: ss << armorGen(0) + "\n";
 			break;
-		case 5: ss << armorGen(1);
+		case 5: ss << armorGen(1) + "\n";
 			break;
-		case 6: ss << weaponGen(1);
+		case 6: ss << weaponGen(1) + "\n";
 			break;
-		case 7: ss << armorGen(2);
+		case 7: ss << armorGen(2) + "\n";
 			break;
-		case 8: ss << armorGen(1) + weaponGen(1);
+		case 8: ss << armorGen(1) + "\n" + weaponGen(1) + "\n";
 			break;
-		case 9: ss << armorGen(2) + weaponGen(1);
+		case 9: ss << armorGen(2) + "\n" + weaponGen(1) + "\n";
 			break;
-		case 10: ss << weaponGen(2);
+		case 10: ss << weaponGen(2) + "\n";
 			break;
-		case 11: ss << armorGen(1) + armorGen(2);
+		case 11: ss << armorGen(1) + "\n" + armorGen(2) + "\n";
 			break;
-		case 12: ss << armorGen(2) + weaponGen(1) + weaponGen(1);
+		case 12: ss << armorGen(2) + "\n" + weaponGen(1) + "\n" + weaponGen(1) + "\n";
 			break;
-		case 13: ss << armorGen(2) + armorGen(2);
+		case 13: ss << armorGen(2) + "\n" + armorGen(2) + "\n";
 			break;
-		case 14: ss << armorGen(3) + weaponGen(1);
+		case 14: ss << armorGen(3) + "\n" + weaponGen(1) + "\n";
 			break;
-		case 15: ss << weaponGen(3);
+		case 15: ss << weaponGen(3) + "\n";
 			break;
-		case 16: ss << armorGen(4) + weaponGen(1);
+		case 16: ss << armorGen(4) + "\n" + weaponGen(1) + "\n";
 			break;
-		case 17: ss << armorGen(3) + weaponGen(3);
+		case 17: ss << armorGen(3) + "\n" + weaponGen(3) + "\n";
 			break;
-		case 18: ss << armorGen(2) + weaponGen(4);
+		case 18: ss << armorGen(2) + "\n" + weaponGen(4) + "\n";
 			break;
-		case 19: ss << armorGen(3) + weaponGen(4);
+		case 19: ss << armorGen(3) + "\n" + weaponGen(4) + "\n";
 			break;
-		case 20: ss << armorGen(1) + weaponGen(5);
+		case 20: ss << armorGen(1) + "\n" + weaponGen(5) + "\n";
 			break;
-		case 21: ss << armorGen(6) + weaponGen(2);
+		case 21: ss << armorGen(6) + "\n" + weaponGen(2) + "\n";
 			break;
-		case 22: ss << armorGen(6) + weaponGen(3);
+		case 22: ss << armorGen(6) + "\n" + weaponGen(3) + "\n";
 			break;
-		case 23: ss << armorGen(2) + weaponGen(6);
+		case 23: ss << armorGen(2) + "\n" + weaponGen(6) + "\n";
 			break;
-		case 24: ss << armorGen(6) + weaponGen(6);
+		case 24: ss << armorGen(6) + "\n" + weaponGen(6) + "\n";
 			break;
 		default: std::cout << "Error Code 3305\n";
 			break;
@@ -4786,55 +4795,55 @@ int genFirst(int type, double value)
 		{
 		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
 			break;
-		case 1: ss << coinGen(2, 4, 2, 10) + coinGen(2, 4, 3) + potGen(1);
+		case 1: ss << coinGen(2, 4, 2, 10) + "\n" + coinGen(2, 4, 3) + "\n" + potGen(1) + "\n";
 			break;
-		case 2: ss << coinGen(2, 4, 2, 10) + coinGen(2, 4, 3) + armorGen(0) + potGen(1);
+		case 2: ss << coinGen(2, 4, 2, 10) + "\n" + coinGen(2, 4, 3) + "\n" + armorGen(0) + "\n" + potGen(1) + "\n";
 			break;
-		case 3: ss << coinGen(2, 4, 2, 10) + coinGen(2, 4, 3) + armorGen(0) + potGen(1);
+		case 3: ss << coinGen(2, 4, 2, 10) + "\n" + coinGen(2, 4, 3) + "\n" + armorGen(0) + "\n" + potGen(1) + "\n";
 			break;
-		case 4: ss << coinGen(2, 4, 2, 10) + coinGen(2, 4, 3) + weaponGen(0) + potGen(1);
+		case 4: ss << coinGen(2, 4, 2, 10) + "\n" + coinGen(2, 4, 3) + "\n" + weaponGen(0) + "\n" + potGen(1) + "\n";
 			break;
-		case 5: ss << weaponGen(0) + potGen(2);
+		case 5: ss << weaponGen(0) + "\n" + potGen(2) + "\n";
 			break;
-		case 6: ss << coinGen(6, 6, 3) + armorGen(0) + weaponGen(0) + potGen(2, 1);
+		case 6: ss << coinGen(6, 6, 3) + "\n" + armorGen(0) + "\n" + weaponGen(0) + "\n" + potGen(2, 1) + "\n";
 			break;
-		case 7: ss << armorGen(0);
+		case 7: ss << armorGen(0) + "\n";
 			break;
-		case 8: ss << armorGen(0) + weaponGen(0) + potGen(2);
+		case 8: ss << armorGen(0) + "\n" + weaponGen(0) + "\n" + potGen(2) + "\n";
 			break;
-		case 9: ss << armorGen(1) + weaponGen(1) + potGen(2, 1);
+		case 9: ss << armorGen(1) + "\n" + weaponGen(1) + "\n" + potGen(2, 1) + "\n";
 			break;
-		case 10: ss << armorGen(0) + weaponGen(1) + potGen(2);
+		case 10: ss << armorGen(0) + "\n" + weaponGen(1) + "\n" + potGen(2) + "\n";
 			break;
-		case 11: ss << armorGen(1) + weaponGen(0) + wGen(1) + potGen(2);
+		case 11: ss << armorGen(1) + "\n" + weaponGen(0) + "\n" + wGen(1) + "\n" + potGen(2) + "\n";
 			break;
-		case 12: ss << armorGen(0) + weaponGen(1) + wGen(1) + potGen(2);
+		case 12: ss << armorGen(0) + "\n" + weaponGen(1) + "\n" + wGen(1) + "\n" + potGen(2) + "\n";
 			break;
-		case 13: ss << armorGen(1) + weaponGen(1) + wGen(1);
+		case 13: ss << armorGen(1) + "\n" + weaponGen(1) + "\n" + wGen(1) + "\n";
 			break;
-		case 14: ss << armorGen(2) + weaponGen(1) + ringGen(1);
+		case 14: ss << armorGen(2) + "\n" + weaponGen(1) + "\n" + ringGen(1) + "\n";
 			break;
-		case 15: ss << armorGen(2) + weaponGen(1) + ringGen(1) + wGen(1) + potGen(3, 2);
+		case 15: ss << armorGen(2) + "\n" + weaponGen(1) + "\n" + ringGen(1) + "\n" + wGen(1) + "\n" + potGen(3, 2) + "\n";
 			break;
-		case 16: ss << armorGen(2) + weaponGen(1) + wGen(2) + potGen(2, 4);
+		case 16: ss << armorGen(2) + "\n" + weaponGen(1) + "\n" + wGen(2) + "\n" + potGen(2, 4) + "\n";
 			break;
-		case 17: ss << armorGen(2) + weaponGen(2) + ringGen(2);
+		case 17: ss << armorGen(2) + "\n" + weaponGen(2) + "\n" + ringGen(2) + "\n";
 			break;
-		case 18: ss << armorGen(3) + weaponGen(2) + wGen(2) + potGen(2, 4);
+		case 18: ss << armorGen(3) + "\n" + weaponGen(2) + "\n" + wGen(2) + "\n" + potGen(2, 4) + "\n";
 			break;
-		case 19: ss << armorGen(3) + weaponGen(3) + ringGen(1) + wGen(1) + potGen(2, 4);
+		case 19: ss << armorGen(3) + "\n" + weaponGen(3) + "\n" + ringGen(1) + "\n" + wGen(1) + "\n" + potGen(2, 4) + "\n";
 			break;
-		case 20: ss << armorGen(3) + weaponGen(3) + ringGen(2, 1) + wGen(2);
+		case 20: ss << armorGen(3) + "\n" + weaponGen(3) + "\n" + ringGen(2, 1) + "\n" + wGen(2) + "\n";
 			break;
-		case 21: ss << armorGen(3) + weaponGen(3) + ringGen(3) + wGen(2) + potGen(2, 4);
+		case 21: ss << armorGen(3) + "\n" + weaponGen(3) + "\n" + ringGen(3) + "\n" + wGen(2) + "\n" + potGen(2, 4) + "\n";
 			break;
-		case 22: ss << armorGen(4) + weaponGen(4) + wGen(3) + potGen(2, 5);
+		case 22: ss << armorGen(4) + "\n" + weaponGen(4) + "\n" + wGen(3) + "\n" + potGen(2, 5) + "\n";
 			break;
-		case 23: ss << armorGen(4) + weaponGen(4) + ringGen(2, 2) + wGen(2, 2);
+		case 23: ss << armorGen(4) + "\n" + weaponGen(4) + "\n" + ringGen(2, 2) + "\n" + wGen(2, 2) + "\n";
 			break;
-		case 24: ss << armorGen(5) + weaponGen(4) + ringGen(2) + wGen(4) + potGen(3, 6);
+		case 24: ss << armorGen(5) + "\n" + weaponGen(4) + "\n" + ringGen(2) + "\n" + wGen(4) + "\n" + potGen(3, 6) + "\n";
 			break;
-		case 25: ss << armorGen(5) + weaponGen(5) + ringGen(3) + ringGen(2) + wGen(2, 3);
+		case 25: ss << armorGen(5) + "\n" + weaponGen(5) + "\n" + ringGen(3) + "\n" + ringGen(2) + "\n" + wGen(2, 3) + "\n";
 			break;
 		default:
 			std::cout << "Error Code 2639\n";
@@ -4845,61 +4854,61 @@ int genFirst(int type, double value)
 		{
 		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
 			break;
-		case 1: ss << coinGen(2, 4, 2, 10) + coinGen(2, 4, 3) + potGen(1);
+		case 1: ss << coinGen(2, 4, 2, 10) + "\n" + coinGen(2, 4, 3) + "\n" + potGen(1) + "\n";
 			break;
-		case 2: ss << coinGen(2, 4, 3) + potGen(1) + scrollGen(1);
+		case 2: ss << coinGen(2, 4, 3) + "\n" + potGen(1) + "\n" + scrollGen(1) + "\n";
 			break;
-		case 3: ss << potGen(1) + scrollGen(2, 1);
+		case 3: ss << potGen(1) + "\n" + scrollGen(2, 1) + "\n";
 			break;
-		case 4: ss << scrollGen(1) + scrollGen(2);
+		case 4: ss << scrollGen(1) + "\n" + scrollGen(2) + "\n";
 			break;
-		case 5: ss << potGen(2, 1) + scrollGen(2);
+		case 5: ss << potGen(2, 1) + "\n" + scrollGen(2) + "\n";
 			break;
-		case 6: ss << scrollGen(2, 2);
+		case 6: ss << scrollGen(2, 2) + "\n";
 			break;
-		case 7: ss << potGen(3, 1) + scrollGen(3, 1);
+		case 7: ss << potGen(3, 1) + "\n" + scrollGen(3, 1) + "\n";
 			break;
-		case 8: ss << potGen(2) + wandGen(1);
+		case 8: ss << potGen(2) + "\n" + wandGen(1) + "\n";
 			break;
-		case 9: ss << coinGen(7, 6, 3) + scrollGen(3, 2) + wandGen(1);
+		case 9: ss << coinGen(7, 6, 3) + "\n" + scrollGen(3, 2) + "\n" + wandGen(1) + "\n";
 			break;
-		case 10: ss << coinGen(3, 6, 3, 10) + potGen(3) + scrollGen(3) + wandGen(1);
+		case 10: ss << coinGen(3, 6, 3, 10) + "\n" + potGen(3) + "\n" + scrollGen(3) + "\n" + wandGen(1) + "\n";
 			break;
-		case 11: ss << coinGen(2, 4, 3, 10) + weaponGen(0) + scrollGen(2, 3) + wandGen(1);
+		case 11: ss << coinGen(2, 4, 3, 10) + "\n" + weaponGen(0) + "\n" + scrollGen(2, 3) + "\n" + wandGen(1) + "\n";
 			break;
-		case 12: ss << potGen(2, 4) + wandGen(2);
+		case 12: ss << potGen(2, 4) + "\n" + wandGen(2) + "\n";
 			break;
-		case 13: ss << potGen(4) + scrollGen(2, 3) + wandGen(2);
+		case 13: ss << potGen(4) + "\n" + scrollGen(2, 3) + "\n" + wandGen(2) + "\n";
 			break;
-		case 14: ss << wGen(1) + potGen(4) + wandGen(2);
+		case 14: ss << wGen(1) + "\n" + potGen(4) + "\n" + wandGen(2) + "\n";
 			break;
-		case 15: ss << ringGen(1) + wGen(1) + scrollGen(2, 1);
+		case 15: ss << ringGen(1) + "\n" + wGen(1) + "\n" + scrollGen(2, 1) + "\n";
 			break;
-		case 16: ss << ringGen(1) + wGen(1) + potGen(4) + wandGen(2);
+		case 16: ss << ringGen(1) + "\n" + wGen(1) + "\n" + potGen(4) + "\n" + wandGen(2) + "\n";
 			break;
-		case 17: ss << potGen(2, 4) + scrollGen(1) + wandGen(3);
+		case 17: ss << potGen(2, 4) + "\n" + scrollGen(1) + "\n" + wandGen(3) + "\n";
 			break;
-		case 18: ss << ringGen(1) + wGen(1) + wandGen(3);
+		case 18: ss << ringGen(1) + "\n" + wGen(1) + "\n" + wandGen(3) + "\n";
 			break;
-		case 19: ss << ringGen(1) + wGen(2) + scrollGen(2, 4) + wandGen(2, 2);
+		case 19: ss << ringGen(1) + "\n" + wGen(2) + "\n" + scrollGen(2, 4) + "\n" + wandGen(2, 2) + "\n";
 			break;
-		case 20: ss << ringGen(1) + rodGen(3) + wandGen(3);
+		case 20: ss << ringGen(1) + "\n" + rodGen(3) + "\n" + wandGen(3) + "\n";
 			break;
-		case 21: ss << ringGen(2) + wGen(2) + potGen(4) + scrollGen(2, 4) + wandGen(3);
+		case 21: ss << ringGen(2) + "\n" + wGen(2) + "\n" + potGen(4) + "\n" + scrollGen(2, 4) + "\n" + wandGen(3) + "\n";
 			break;
-		case 22: ss << ringGen(1) + wandGen(3) + wandGen(4) + wGen(2);
+		case 22: ss << ringGen(1) + "\n" + wandGen(3) + "\n" + wandGen(4) + "\n" + wGen(2) + "\n";
 			break;
-		case 23: ss << ringGen(2) + wGen(3) + scrollGen(5) + wandGen(4);
+		case 23: ss << ringGen(2) + "\n" + wGen(3) + "\n" + scrollGen(5) + "\n" + wandGen(4) + "\n";
 			break;
-		case 24: ss << weaponGen(1) + staffGen(3) + rodGen(4) + wGen(2, 1) + wandGen(5);
+		case 24: ss << weaponGen(1) + "\n" + staffGen(3) + "\n" + rodGen(4) + "\n" + wGen(2, 1) + "\n" + wandGen(5) + "\n";
 			break;
-		case 25: ss << ringGen(2) + wGen(2, 3) + potGen(5) + scrollGen(3, 4) + wandGen(5);
+		case 25: ss << ringGen(2) + "\n" + wGen(2, 3) + "\n" + potGen(5) + "\n" + scrollGen(3, 4) + "\n" + wandGen(5) + "\n";
 			break;
-		case 26: ss << staffGen(3) + rodGen(4) + wGen(4) + potGen(4) + scrollGen(2, 5) + wandGen(3);
+		case 26: ss << staffGen(3) + "\n" + rodGen(4) + "\n" + wGen(4) + "\n" + potGen(4) + "\n" + scrollGen(2, 5) + "\n" + wandGen(3) + "\n";
 			break;
-		case 27: ss << weaponGen(1) + staffGen(4) + wGen(4) + scrollGen(3, 6) + wGen(6);
+		case 27: ss << weaponGen(1) + "\n" + staffGen(4) + "\n" + wGen(4) + "\n" + scrollGen(3, 6) + "\n" + wGen(6) + "\n";
 			break;
-		case 28: ss << ringGen(5) + rodGen(4) + staffGen(5) + scrollGen(5) + wandGen(4);
+		case 28: ss << ringGen(5) + "\n" + rodGen(4) + "\n" + staffGen(5) + "\n" + scrollGen(5) + "\n" + wandGen(4) + "\n";
 			break;
 		default: std::cout << "Error Code 4639\n";
 			break;
@@ -4909,33 +4918,33 @@ int genFirst(int type, double value)
 		{
 		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
 			break;
-		case 1: ss << coinGen(4, 4, 1, 100) + coinGen(3, 6, 2, 10) + coinGen(2, 4, 3, 10) + weaponGen(0) + potGen(1) + scrollGen(1) + gemGen(2);
+		case 1: ss << coinGen(4, 4, 1, 100) + "\n" + coinGen(3, 6, 2, 10) + "\n" + coinGen(2, 4, 3, 10) + "\n" + weaponGen(0) + "\n" + potGen(1) + "\n" + scrollGen(1) + "\n" + gemGen(2) + "\n";
 			break;
-		case 2: ss << coinGen(2, 4, 1, 100) + coinGen(2, 6, 2, 100) + coinGen(6, 6, 3) + potGen(2) + scrollGen(2) + wandGen(1) + gemGen(3, 1);
+		case 2: ss << coinGen(2, 4, 1, 100) + "\n" + coinGen(2, 6, 2, 100) + "\n" + coinGen(6, 6, 3) + "\n" + potGen(2) + "\n" + scrollGen(2) + "\n" + wandGen(1) + "\n" + gemGen(3, 1) + "\n";
 			break;
-		case 3: ss << coinGen(3, 6, 2, 10) + coinGen(2, 4, 3) + armorGen(0) + weaponGen(0) + potGen(2, 3) + scrollGen(2, 2) + gemGen(2);
+		case 3: ss << coinGen(3, 6, 2, 10) + "\n" + coinGen(2, 4, 3) + "\n" + armorGen(0) + "\n" + weaponGen(0) + "\n" + potGen(2, 3) + "\n" + scrollGen(2, 2) + "\n" + gemGen(2) + "\n";
 			break;
-		case 4: ss << coinGen(2, 4, 3, 10) + coinGen(4, 6, 4) + weaponGen(0) + ringGen(1) + potGen(4) + scrollGen(3) + wandGen(2);
+		case 4: ss << coinGen(2, 4, 3, 10) + "\n" + coinGen(4, 6, 4) + "\n" + weaponGen(0) + "\n" + ringGen(1) + "\n" + potGen(4) + "\n" + scrollGen(3) + "\n" + wandGen(2) + "\n";
 			break;
-		case 5: ss << coinGen(4, 4, 3, 10) + coinGen(6, 6, 4) + weaponGen(1) + wGen(1) + potGen(2, 4) + wandGen(2) + gemGen(2, 3);
+		case 5: ss << coinGen(4, 4, 3, 10) + "\n" + coinGen(6, 6, 4) + "\n" + weaponGen(1) + "\n" + wGen(1) + "\n" + potGen(2, 4) + "\n" + wandGen(2) + "\n" + gemGen(2, 3) + "\n";
 			break;
-		case 6: ss << coinGen(4, 8, 3, 10) + coinGen(6, 10, 4) + armorGen(2) + ringGen(1) + wGen(1) + scrollGen(3) + wandGen(2) + gemGen(4);
+		case 6: ss << coinGen(4, 8, 3, 10) + "\n" + coinGen(6, 10, 4) + "\n" + armorGen(2) + "\n" + ringGen(1) + "\n" + wGen(1) + "\n" + scrollGen(3) + "\n" + wandGen(2) + "\n" + gemGen(4) + "\n";
 			break;
-		case 7: ss << coinGen(4, 4, 3, 10) + coinGen(4, 4, 4, 10) + armorGen(2) + wGen(1) + potGen(2, 4) + scrollGen(2, 4) + wandGen(3) + gemGen(3);
+		case 7: ss << coinGen(4, 4, 3, 10) + "\n" + coinGen(4, 4, 4, 10) + "\n" + armorGen(2) + "\n" + wGen(1) + "\n" + potGen(2, 4) + "\n" + scrollGen(2, 4) + "\n" + wandGen(3) + "\n" + gemGen(3) + "\n";
 			break;
-		case 8: ss << coinGen(2, 4, 4, 10) + ringGen(2) + wGen(2, 1) + potGen(2, 4) + scrollGen(2, 5) + wandGen(3);
+		case 8: ss << coinGen(2, 4, 4, 10) + "\n" + ringGen(2) + "\n" + wGen(2, 1) + "\n" + potGen(2, 4) + "\n" + scrollGen(2, 5) + "\n" + wandGen(3) + "\n";
 			break;
-		case 9: ss << coinGen(6, 10, 3, 10) + coinGen(6, 6, 4) + armorGen(3) + weaponGen(1) + wGen(2) + scrollGen(2, 5) + wandGen(3) + gemGen(4);
+		case 9: ss << coinGen(6, 10, 3, 10) + "\n" + coinGen(6, 6, 4) + "\n" + armorGen(3) + "\n" + weaponGen(1) + "\n" + wGen(2) + "\n" + scrollGen(2, 5) + "\n" + wandGen(3) + "\n" + gemGen(4) + "\n";
 			break;
-		case 10: ss << coinGen(6, 6, 3, 10) + coinGen(2, 4, 4, 10) + weaponGen(2) + wGen(3) + wandGen(4) + gemGen(3, 3);
+		case 10: ss << coinGen(6, 6, 3, 10) + "\n" + coinGen(2, 4, 4, 10) + "\n" + weaponGen(2) + "\n" + wGen(3) + "\n" + wandGen(4) + "\n" + gemGen(3, 3) + "\n";
 			break;
-		case 11: ss << coinGen(4, 4, 3, 10) + coinGen(4, 4, 4, 10) + ringGen(3) + rodGen(3) + potGen(2, 6) + scrollGen(2, 5) + wandGen(5);
+		case 11: ss << coinGen(4, 4, 3, 10) + "\n" + coinGen(4, 4, 4, 10) + "\n" + ringGen(3) + "\n" + rodGen(3) + "\n" + potGen(2, 6) + "\n" + scrollGen(2, 5) + "\n" + wandGen(5) + "\n";
 			break;
-		case 12: ss << coinGen(4, 4, 4, 10) + armorGen(4) + staffGen(3) + wGen(3) + scrollGen(6) + wandGen(3) + gemGen(5);
+		case 12: ss << coinGen(4, 4, 4, 10) + "\n" + armorGen(4) + "\n" + staffGen(3) + "\n" + wGen(3) + "\n" + scrollGen(6) + "\n" + wandGen(3) + "\n" + gemGen(5) + "\n";
 			break;
-		case 13: ss << coinGen(2, 8, 3, 100) + coinGen(4, 4, 4, 10) + weaponGen(2) + ringGen(4) + staffGen(4) + potGen(3, 6) + scrollGen(6) + wandGen(5) + gemGen(5);
+		case 13: ss << coinGen(2, 8, 3, 100) + "\n" + coinGen(4, 4, 4, 10) + "\n" + weaponGen(2) + "\n" + ringGen(4) + "\n" + staffGen(4) + "\n" + potGen(3, 6) + "\n" + scrollGen(6) + "\n" + wandGen(5) + "\n" + gemGen(5) + "\n";
 			break;
-		case 14: ss << coinGen(8, 6, 3, 100) + coinGen(4, 4, 4, 10) + ringGen(5) + wGen(5) + potGen(3, 6) + scrollGen(6) + wandGen(3) + gemGen(2, 5) + gemGen(6);
+		case 14: ss << coinGen(8, 6, 3, 100) + "\n" + coinGen(4, 4, 4, 10) + "\n" + ringGen(5) + "\n" + wGen(5) + "\n" + potGen(3, 6) + "\n" + scrollGen(6) + "\n" + wandGen(3) + "\n" + gemGen(2, 5) + "\n" + gemGen(6) + "\n";
 			break;
 		default: std::cout << "Error Code 4753\n";
 			break;
@@ -4945,41 +4954,45 @@ int genFirst(int type, double value)
 		{
 		case -1: std::cout << "Too sm0l value for this encounter type\nTry again with a less valuable type\n";
 			break;
-		case 1: coinGen(4, 4, 1, 100) + coinGen(6, 6, 2, 100) + coinGen(2, 4, 3, 100) + coinGen(6, 6, 4) + armorGen(1) + wandGen(2) + gemGen(5, 3) + artGen(3);
+		case 1: coinGen(4, 4, 1, 100) + "\n" + coinGen(6, 6, 2, 100) + "\n" + coinGen(2, 4, 3, 100) + "\n" + coinGen(6, 6, 4) + "\n" + armorGen(1) + "\n" + wandGen(2) + "\n" + gemGen(5, 3) + "\n" + artGen(3) + "\n";
 			break;
-		case 2: coinGen(4, 4, 1, 100) + coinGen(6, 6, 2, 100) + coinGen(2, 4, 3, 100) + coinGen(6, 6, 4) + armorGen(2) + weaponGen(1) + wGen(1) + scrollGen(4) + gemGen(4) + artGen(3);
+		case 2: coinGen(4, 4, 1, 100) + "\n" + coinGen(6, 6, 2, 100) + "\n" + coinGen(2, 4, 3, 100) + "\n" + coinGen(6, 6, 4) + "\n" + armorGen(2) + "\n" + weaponGen(1) + "\n" + wGen(1) + "\n" + scrollGen(4) + "\n" + gemGen(4) + "\n" + artGen(3) + "\n";
 			break;
-		case 3: coinGen(2, 4, 1, 1000) + coinGen(6, 4, 2, 100) + coinGen(3, 6, 3, 10) + coinGen(6, 6, 4) + ringGen(2) + wGen(2, 1) + potGen(2, 4) + wandGen(2) + gemGen(4) + artGen(3);
+		case 3: coinGen(2, 4, 1, 1000) + "\n" + coinGen(6, 4, 2, 100) + "\n" + coinGen(3, 6, 3, 10) + "\n" + coinGen(6, 6, 4) + "\n" + ringGen(2) + "\n" + wGen(2, 1) + "\n" + potGen(2, 4) + "\n" + wandGen(2) + "\n" + gemGen(4) + "\n" + artGen(3) + "\n";
 			break;
-		case 4: coinGen(2, 4, 1, 1000) + coinGen(6, 4, 2, 100) + coinGen(3, 6, 3, 10) + coinGen(6, 6, 4) + armorGen(2) + rodGen(3) + wGen(2) + potGen(2, 5) + scrollGen(4) + artGen(3, 3);
+		case 4: coinGen(2, 4, 1, 1000) + "\n" + coinGen(6, 4, 2, 100) + "\n" + coinGen(3, 6, 3, 10) + "\n" + coinGen(6, 6, 4) + "\n" + armorGen(2) + "\n" + rodGen(3) + "\n" + wGen(2) + "\n" + potGen(2, 5) + "\n" + scrollGen(4) + "\n" + artGen(3, 3) + "\n";
 			break;
-		case 5: coinGen(2, 4, 1, 1000) + coinGen(6, 4, 2, 100) + coinGen(3, 6, 3, 10) + coinGen(6, 6, 4) + staffGen(3) + wGen(2, 1) + potGen(4) + wandGen(3) + gemGen(2, 2) + gemGen(2, 3) + gemGen(4);
+		case 5: coinGen(2, 4, 1, 1000) + "\n" + coinGen(6, 4, 2, 100) + "\n" + coinGen(3, 6, 3, 10) + "\n" + coinGen(6, 6, 4) + "\n" + staffGen(3) + "\n" + wGen(2, 1) + "\n" + potGen(4) + "\n" + wandGen(3) + "\n" + gemGen(2, 2) + "\n" + gemGen(2, 3) + "\n" + gemGen(4) + "\n";
 			break;
-		case 6: coinGen(2, 4, 1, 1000) + coinGen(6, 4, 2, 100) + coinGen(3, 6, 3, 10) + coinGen(6, 6, 4) + armorGen(3) + weaponGen(2) + wGen(3) + scrollGen(2, 5) + artGen(4);
+		case 6: coinGen(2, 4, 1, 1000) + "\n" + coinGen(6, 4, 2, 100) + "\n" + coinGen(3, 6, 3, 10) + "\n" + coinGen(6, 6, 4) + "\n" + armorGen(3) + "\n" + weaponGen(2) + "\n" + wGen(3) + "\n" + scrollGen(2, 5) + "\n" + artGen(4) + "\n";
 			break;
-		case 7: coinGen(4, 4, 1, 100) + coinGen(6, 6, 2, 100) + coinGen(2, 4, 3, 100) + coinGen(6, 6, 4) + weaponGen(3) + rodGen(4) + potGen(6) + scrollGen(4) + wandGen(3) + artGen(3, 3) + artGen(2, 4);
+		case 7: coinGen(4, 4, 1, 100) + "\n" + coinGen(6, 6, 2, 100) + "\n" + coinGen(2, 4, 3, 100) + "\n" + coinGen(6, 6, 4) + "\n" + weaponGen(3) + "\n" + rodGen(4) + "\n" + potGen(6) + "\n" + scrollGen(4) + "\n" + wandGen(3) + "\n" + artGen(3, 3) + "\n" + artGen(2, 4) + "\n";
 			break;
-		case 8: coinGen(4, 4, 1, 10000) + coinGen(6, 6, 2, 1000) + coinGen(4, 4, 3, 100) + coinGen(2, 4, 4, 10) + armorGen(2) + weaponGen(2, 2) + staffGen(4) + wGen(2) + gemGen(5);
+		case 8: coinGen(4, 4, 1, 10000) + "\n" + coinGen(6, 6, 2, 1000) + "\n" + coinGen(4, 4, 3, 100) + "\n" + coinGen(2, 4, 4, 10) + "\n" + armorGen(2) + "\n" + weaponGen(2, 2) + "\n" + staffGen(4) + "\n" + wGen(2) + "\n" + gemGen(5) + "\n";
 			break;
-		case 9: coinGen(2, 4, 1, 10000) + coinGen(2, 4, 2, 1000) + coinGen(2, 4, 3, 100) + coinGen(2, 4, 4, 10) + weaponGen(4)+ rodGen(4) + wGen(3) + scrollGen(6) + wandGen(2, 2) + gemGen(4) + artGen(5, 2);
+		case 9: coinGen(2, 4, 1, 10000) + "\n" + coinGen(2, 4, 2, 1000) + "\n" + coinGen(2, 4, 3, 100) + "\n" + coinGen(2, 4, 4, 10) + "\n" + weaponGen(4) + "\n" + rodGen(4) + "\n" + wGen(3) + "\n" + scrollGen(6) + "\n" + wandGen(2, 2) + "\n" + gemGen(4) + "\n" + artGen(5, 2) + "\n";
 			break;
-		case 10: coinGen(2, 4, 1, 10000) + coinGen(2, 4, 2, 1000) + coinGen(2, 4, 3, 100) + coinGen(2, 4, 4, 10) + armorGen(5) + ringGen(4) + staffGen(3) + wandGen(4) + gemGen(6) + artGen(4);
+		case 10: coinGen(2, 4, 1, 10000) + "\n" + coinGen(2, 4, 2, 1000) + "\n" + coinGen(2, 4, 3, 100) + "\n" + coinGen(2, 4, 4, 10) + "\n" + armorGen(5) + "\n" + ringGen(4) + "\n" + staffGen(3) + "\n" + wandGen(4) + "\n" + gemGen(6) + "\n" + artGen(4) + "\n";
 			break;
-		case 11: coinGen(2, 4, 1, 10000) + coinGen(2, 4, 2, 1000) + coinGen(2, 4, 3, 100) + coinGen(2, 4, 4, 10) + weaponGen(3) + ringGen(4) + rodGen(5) + wGen(4) + potGen(2, 6) + scrollGen(3) + artGen(2, 4);
+		case 11: coinGen(2, 4, 1, 10000) + "\n" + coinGen(2, 4, 2, 1000) + "\n" + coinGen(2, 4, 3, 100) + "\n" + coinGen(2, 4, 4, 10) + "\n" + weaponGen(3) + "\n" + ringGen(4) + "\n" + rodGen(5) + "\n" + wGen(4) + "\n" + potGen(2, 6) + "\n" + scrollGen(3) + "\n" + artGen(2, 4) + "\n";
 			break;
-		case 12: coinGen(4, 4, 1, 10000) + coinGen(6, 6, 2, 1000) + coinGen(4, 4, 3, 100) + coinGen(2, 8, 4, 10) + armorGen(6) + weaponGen(3) + staffGen(5) + scrollGen(2, 6) + wandGen(6) + gemGen(6) + artGen(3, 4);
+		case 12: coinGen(4, 4, 1, 10000) + "\n" + coinGen(6, 6, 2, 1000) + "\n" + coinGen(4, 4, 3, 100) + "\n" + coinGen(2, 8, 4, 10) + "\n" + armorGen(6) + "\n" + weaponGen(3) + "\n" + staffGen(5) + "\n" + scrollGen(2, 6) + "\n" + wandGen(6) + "\n" + gemGen(6) + "\n" + artGen(3, 4) + "\n";
 			break;
-		case 13: coinGen(4, 4, 1, 10000) + coinGen(6, 6, 2, 1000) + coinGen(4, 4, 3, 100) + coinGen(2, 8, 4, 10) + armorGen(4) + ringGen(5) + wGen(6) + wandGen(6);
+		case 13: coinGen(4, 4, 1, 10000) + "\n" + coinGen(6, 6, 2, 1000) + "\n" + coinGen(4, 4, 3, 100) + "\n" + coinGen(2, 8, 4, 10) + "\n" + armorGen(4) + "\n" + ringGen(5) + "\n" + wGen(6) + "\n" + wandGen(6) + "\n";
 			break;
-		case 14: coinGen(4, 4, 1, 10000) + coinGen(6, 6, 2, 1000) + coinGen(4, 4, 3, 100) + coinGen(2, 8, 4, 10) + weaponGen(6) + ringGen(2, 3) + staffGen(5) + wGen(5) + wandGen(5) + gemGen(3, 5) + gemGen(4);
+		case 14: coinGen(4, 4, 1, 10000) + "\n" + coinGen(6, 6, 2, 1000) + "\n" + coinGen(4, 4, 3, 100) + "\n" + coinGen(2, 8, 4, 10) + "\n" + weaponGen(6) + "\n" + ringGen(2, 3) + "\n" + staffGen(5) + "\n" + wGen(5) + "\n" + wandGen(5) + "\n" + gemGen(3, 5) + "\n" + gemGen(4) + "\n";
 			break;
-		case 15: coinGen(8, 4, 1, 10000) + coinGen(12, 6, 2, 1000) + coinGen(8, 4, 3, 100) + coinGen(2, 8, 4, 10) + weaponGen(6) + ringGen(5) + staffGen(6) + wGen(6) + wandGen(4) + gemGen(6) + artGen(6);
+		case 15: coinGen(8, 4, 1, 10000) + "\n" + coinGen(12, 6, 2, 1000) + "\n" + coinGen(8, 4, 3, 100) + "\n" + coinGen(2, 8, 4, 10) + "\n" + weaponGen(6) + "\n" + ringGen(5) + "\n" + staffGen(6) + "\n" + wGen(6) + "\n" + wandGen(4) + "\n" + gemGen(6) + "\n" + artGen(6) + "\n";
 			break;
-		default: 
+		default:
 			break;
 		}
 	std::cout << ss.str();
-	return lootValue(types[type - 1], value);
+
+	int repeat;
+	std::cout << "Again?\n1. Yes\n2. No\n";
+	std::cin >> repeat;
+	return repeat;
 }
 int main()
 {
@@ -4991,39 +5004,48 @@ int main()
 
 	do
 	{
-		std::cout << "What CR was the encounter?\n";
-		std::cin >> CR;
 		system("cls");
-		std::cout << "How much treasure do you want to generate?\n";
-		std::cout << "1. Incidental\n";
-		std::cout << "2. Normal\n";
-		std::cout << "3. Double\n";
-		std::cout << "4. Triple\n";
-		std::cout << "5. NPC Gear\n";
-		std::cin >> modifier;
-		system("cls");
-
-		if (modifier == 5)
+		do
 		{
-			int level;
 			do
 			{
-				level = 0;
-				std::cout << "What level was the NPC?\n";
-				std::cin >> level;
-				value += npcVal[level - 1];
-				std::cout << "Was there another NPC?\n";
-				std::cout << "1. Yes\n";
-				std::cout << "2. No\n";
-				std::cin >> level;
+				std::cout << "What CR was the encounter?\n";
+				std::cin >> CR;
 				system("cls");
-			} while (level == 1);
-		}
-	} while (modifier > 5 || modifier < 1);
-	if (modifier != 5) value = crVal[CR - 1] * modifier;
+			} while (CR > 20 || CR < 1);
 
-	do
-	{
+			do
+			{
+				std::cout << "How much treasure do you want to generate?\n";
+				std::cout << "1. Incidental\n";
+				std::cout << "2. Normal\n";
+				std::cout << "3. Double\n";
+				std::cout << "4. Triple\n";
+				std::cout << "5. NPC Gear\n";
+				std::cin >> modifier;
+				system("cls");
+			} while (modifier > 5 || modifier < 1);
+
+			if (modifier == 5)
+			{
+				int level;
+				do
+				{
+					level = 0, value = 0;
+					std::cout << "What level was the NPC?\n";
+					std::cin >> level;
+					value += npcVal[level - 1];
+					system("cls");
+					std::cout << "Was there another NPC?\n";
+					std::cout << "1. Yes\n";
+					std::cout << "2. No\n";
+					std::cin >> level;
+					system("cls");
+				} while (level == 1);
+			}
+		} while (modifier > 5 || modifier < 1);
+		if (modifier != 5) value = crVal[CR - 1] * modifier;
+
 		do
 		{
 			std::cout << "What kind of treasure do you want to generate?\n";
@@ -5039,6 +5061,6 @@ int main()
 			std::cin >> type;
 			system("cls");
 		} while (type > 9 || type < 1);
-	} while (genFirst(type, value) >= 0);
+	} while (genFirst(type, value) == 1);
 	return 0;
 }
