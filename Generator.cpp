@@ -5,6 +5,7 @@
 #include <sstream>
 #include <time.h>
 #include <fstream>
+#include "windows.h"
 
 int roll(int numOfRolls, int dice)
 {
@@ -4550,7 +4551,15 @@ std::string rodGen(int multiple, int subtype)
 	return ss.str();
 }
 
-int genFirst(int type, double value)
+void toText(std::string ss, std::string head)
+{
+	std::ofstream ofs( "Loot Output.txt", std::ofstream::app );
+	ofs << head << ss << "- - - - - - - - - - - - - - - - - - - -\n\n";
+	ofs.close();
+	cls();
+	std::cout << "Save Success\n\n";
+}
+int genFirst(int type, double value, std::string head)
 {
 	std::stringstream ss;
 	std::vector<int> types[] = {
@@ -4987,67 +4996,102 @@ int genFirst(int type, double value)
 		default:
 			break;
 		}
-	std::cout << ss.str();
+	std::cout << head << ss.str();
 
 	int repeat;
 	do
 	{
-		std::cout << "Again?\n1. Yes\n2. No\n3.Save these results for later (In Progress)";
+		std::cout << "Again?\n1. Yes\n2. No\n3. Save these results for later\n";
 		std::cin >> repeat;
-		if (repeat == 3) toText(ss);
-	} while (repeat == 1 || repeat == 2);
+		if (repeat == 3) toText( ss.str(), head );
+	} while (repeat != 1 && repeat != 2);
 	return repeat;
+}
+void cls()
+{
+	HANDLE                     hStdOut;
+	CONSOLE_SCREEN_BUFFER_INFO csbi;
+	DWORD                      count;
+	DWORD                      cellCount;
+	COORD                      homeCoords = { 0, 0 };
+
+	hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	if (hStdOut == INVALID_HANDLE_VALUE) return;
+
+	/* Get the number of cells in the current buffer */
+	if (!GetConsoleScreenBufferInfo(hStdOut, &csbi)) return;
+	cellCount = csbi.dwSize.X *csbi.dwSize.Y;
+
+	/* Fill the entire buffer with spaces */
+	if (!FillConsoleOutputCharacter(
+		hStdOut,
+		(TCHAR) ' ',
+		cellCount,
+		homeCoords,
+		&count
+	)) return;
+
+	/* Fill the entire buffer with the current colors and attributes */
+	if (!FillConsoleOutputAttribute(
+		hStdOut,
+		csbi.wAttributes,
+		cellCount,
+		homeCoords,
+		&count
+	)) return;
+
+	/* Move the cursor home */
+	SetConsoleCursorPosition(hStdOut, homeCoords);
 }
 int main()
 {
-	int CR, type;
+	int CR, type, level = 0;
 	double modifier, value;
 	int npcVal[20] = { 260, 390, 780, 1650, 2400, 3450, 4650, 6000, 7800, 10050, 12750, 16350, 21000, 27000, 34800, 45000, 58500, 75000, 96000, 123000 },
 		crVal[20] = { 400, 800, 1200, 1700, 2300, 3000, 3900, 5000, 6400, 8200, 10500, 13500, 17500, 22000, 29000, 38000, 48000, 62000, 79000, 100000 };
+	std::string head = "";
 	srand((unsigned int)time(NULL));
 
 	do
 	{
-		system("cls");
+		cls();
 		do
+		{
+			std::cout << "What CR was the encounter?\n";
+			std::cin >> CR;
+			cls();
+			if (CR > 1 || CR < 20) std::cout << "Invalid CR. Please enter a number between 1 and 20\n\n";
+		} while (CR < 1 || CR > 20);
+
+		do
+		{
+			std::cout << "How much treasure do you want to generate?\n";
+			std::cout << "1. Incidental\n";
+			std::cout << "2. Normal\n";
+			std::cout << "3. Double\n";
+			std::cout << "4. Triple\n";
+			std::cout << "5. NPC Gear\n";
+			std::cin >> modifier;
+			cls();
+			if (modifier > 1 || modifier < 5) std::cout << "Invalid number. Please enter a number between 1 and 5\n\n";
+		} while (modifier < 1 || modifier > 5);
+
+		if (modifier == 5)
 		{
 			do
 			{
-				std::cout << "What CR was the encounter?\n";
-				std::cin >> CR;
-				system("cls");
-			} while (CR > 20 || CR < 1);
-
-			do
-			{
-				std::cout << "How much treasure do you want to generate?\n";
-				std::cout << "1. Incidental\n";
-				std::cout << "2. Normal\n";
-				std::cout << "3. Double\n";
-				std::cout << "4. Triple\n";
-				std::cout << "5. NPC Gear\n";
-				std::cin >> modifier;
-				system("cls");
-			} while (modifier > 5 || modifier < 1);
-
-			if (modifier == 5)
-			{
-				int level;
-				do
-				{
-					level = 0, value = 0;
-					std::cout << "What level was the NPC?\n";
-					std::cin >> level;
-					value += npcVal[level - 1];
-					system("cls");
-					std::cout << "Was there another NPC?\n";
-					std::cout << "1. Yes\n";
-					std::cout << "2. No\n";
-					std::cin >> level;
-					system("cls");
-				} while (level == 1);
-			}
-		} while (modifier > 5 || modifier < 1);
+				level = 0, value = 0;
+				std::cout << "What level was the NPC?\n";
+				std::cin >> level;
+				value += npcVal[level - 1];
+				cls();
+				std::cout << "Was there another NPC?\n";
+				std::cout << "1. Yes\n";
+				std::cout << "2. No\n";
+				std::cin >> level;
+				cls();
+			} while (level == 1);
+		}
 		if (modifier != 5) value = crVal[CR - 1] * modifier;
 
 		do
@@ -5063,8 +5107,10 @@ int main()
 			std::cout << "8. Lair Treasure\n\tA large number of magic items, coins, and other valuables\n";
 			std::cout << "9. Treasure Hoard\n\tThis can contain virtually any type of item\n";
 			std::cin >> type;
-			system("cls");
+			cls();
 		} while (type > 9 || type < 1);
-	} while (genFirst(type, value) == 1);
+		if (level == 0) head = "CR " + std::to_string(CR) + " Encounter - Type " + std::to_string(type) + " Treasure\n\n";
+		else if (level != 0) head = "Level " + std::to_string(level) + " NPC - Type " + std::to_string(type) + " Treasure\n\n";
+	} while (genFirst(type, value, head) == 1);
 	return 0;
 }
