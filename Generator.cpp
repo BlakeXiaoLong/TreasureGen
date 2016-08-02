@@ -7,14 +7,44 @@
 #include <fstream>
 #include "windows.h"
 
-int roll(int numOfRolls, int dice)
+void cls()
 {
-	int result = 0;
-	for (int i = 0; i < numOfRolls; i++)
-		result += rand() % dice + 1;
-	return result;
+	HANDLE                     hStdOut;
+	CONSOLE_SCREEN_BUFFER_INFO csbi;
+	DWORD                      count;
+	DWORD                      cellCount;
+	COORD                      homeCoords = { 0, 0 };
+
+	hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	if (hStdOut == INVALID_HANDLE_VALUE) return;
+
+	/* Get the number of cells in the current buffer */
+	if (!GetConsoleScreenBufferInfo(hStdOut, &csbi)) return;
+	cellCount = csbi.dwSize.X *csbi.dwSize.Y;
+
+	/* Fill the entire buffer with spaces */
+	if (!FillConsoleOutputCharacter(
+		hStdOut,
+		(TCHAR) ' ',
+		cellCount,
+		homeCoords,
+		&count
+	)) return;
+
+	/* Fill the entire buffer with the current colors and attributes */
+	if (!FillConsoleOutputAttribute(
+		hStdOut,
+		csbi.wAttributes,
+		cellCount,
+		homeCoords,
+		&count
+	)) return;
+
+	/* Move the cursor home */
+	SetConsoleCursorPosition(hStdOut, homeCoords);
 }
-int roll(int numOfRolls, int dice, int multiplier)
+
+int roll(int numOfRolls, int dice, int multiplier = 1)
 {
 	int result = 0;
 	for (int i = 0; i < numOfRolls; i++)
@@ -4553,7 +4583,7 @@ std::string rodGen(int multiple, int subtype)
 
 void toText(std::string ss, std::string head)
 {
-	std::ofstream ofs( "Loot Output.txt", std::ofstream::app );
+	std::ofstream ofs("Loot Output.txt", std::ofstream::app);
 	ofs << head << ss << "- - - - - - - - - - - - - - - - - - - -\n\n";
 	ofs.close();
 	cls();
@@ -5007,42 +5037,7 @@ int genFirst(int type, double value, std::string head)
 	} while (repeat != 1 && repeat != 2);
 	return repeat;
 }
-void cls()
-{
-	HANDLE                     hStdOut;
-	CONSOLE_SCREEN_BUFFER_INFO csbi;
-	DWORD                      count;
-	DWORD                      cellCount;
-	COORD                      homeCoords = { 0, 0 };
 
-	hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
-	if (hStdOut == INVALID_HANDLE_VALUE) return;
-
-	/* Get the number of cells in the current buffer */
-	if (!GetConsoleScreenBufferInfo(hStdOut, &csbi)) return;
-	cellCount = csbi.dwSize.X *csbi.dwSize.Y;
-
-	/* Fill the entire buffer with spaces */
-	if (!FillConsoleOutputCharacter(
-		hStdOut,
-		(TCHAR) ' ',
-		cellCount,
-		homeCoords,
-		&count
-	)) return;
-
-	/* Fill the entire buffer with the current colors and attributes */
-	if (!FillConsoleOutputAttribute(
-		hStdOut,
-		csbi.wAttributes,
-		cellCount,
-		homeCoords,
-		&count
-	)) return;
-
-	/* Move the cursor home */
-	SetConsoleCursorPosition(hStdOut, homeCoords);
-}
 int main()
 {
 	int CR, type, level = 0;
@@ -5060,7 +5055,7 @@ int main()
 			std::cout << "What CR was the encounter?\n";
 			std::cin >> CR;
 			cls();
-			if (CR > 1 || CR < 20) std::cout << "Invalid CR. Please enter a number between 1 and 20\n\n";
+			if (CR < 1 || CR > 20) std::cout << "Invalid CR. Please enter a number between 1 and 20\n\n";
 		} while (CR < 1 || CR > 20);
 
 		do
@@ -5073,7 +5068,7 @@ int main()
 			std::cout << "5. NPC Gear\n";
 			std::cin >> modifier;
 			cls();
-			if (modifier > 1 || modifier < 5) std::cout << "Invalid number. Please enter a number between 1 and 5\n\n";
+			if (modifier < 1 || modifier > 5) std::cout << "Invalid number. Please enter a number between 1 and 5\n\n";
 		} while (modifier < 1 || modifier > 5);
 
 		if (modifier == 5)
