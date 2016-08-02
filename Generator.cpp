@@ -4584,8 +4584,8 @@ int main()
 				value += npcVal[level - 1];
 				std::cout << "Was there another NPC?\n1. Yes\n2. No\n";
 				std::cin >> level;
-				cls();
-			} while (level == 1);
+				if (level < 1 || level > 2) std::cout << "Invalid number. Please enter a number between 1 and 2\n\n";
+			} while (level < 1 || level > 2);
 		}
 		if (modifier != 5) value = crVal[CR - 1] * modifier;
 
